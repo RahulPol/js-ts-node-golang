@@ -1,0 +1,44 @@
+Preparations:
+1. Data structures. solve easy and medium problems in leet code
+   - arrays
+   - trees
+   - graph (BFS / DFS)
+2. Node js code challenges around APIs
+3. Design patterns in javascript
+4. System architecture interview
+
+Questions asked till now
+1. Move from city a to city b with shortest path
+2. Write code for cache
+3. Write code for API rate limiter
+4. Given a set of arrays of numbers, determine numbers that occurs frequently
+    Example:
+    const a = [1,5,2,5,3,7,3,5,9,0];
+    const b = [2,4,7,5,1,5,8];
+    const c = [5,5,7,6];
+    const d = [5,5,5,7,7,7,7];
+    getMostFrequent([a,b,c,d]); // prints: 5
+5. Write utility that will GET a record from REST API endpoint, perform some operations to data,
+   then PUT the processed data to same endpoint.
+   It should be possible to provide an array of record IDs that need to be processed. There should
+   be a way to specify the max number of concurrent connections for both GET and PUT URLs.
+   Example:
+   const utility = new Utility({
+    url: '/api/records/',
+    maxGet: 10,
+    maxPut: 2,
+    processFn: function(data){
+        data.processed = true;
+        return data;
+    }
+   })
+   utility.start([1,2,3,4,....,499,500])
+6. Find nth smallest in sorted array set.
+    Example:
+    const a = [1,3,5,8];
+    const b = [3,8,8,6];
+    const c = [4,5,10,15];
+
+    fn(nth, a,b,c);
+    fn(0, a, b, c); => 1
+    fn(4, a, b, c); => 4
