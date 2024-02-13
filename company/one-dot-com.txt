@@ -4,7 +4,7 @@ Preparations:
    - trees
    - graph (BFS / DFS)
 2. Node js code challenges around APIs
-3. Design patterns in javascript
+3. SOLID & Design patterns in javascript
 4. System architecture interview
 
 Questions asked till now

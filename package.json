@@ -1,0 +1,23 @@
+{
+  "name": "js-leetcode-top-150",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RahulPol/js-leetcode-top-150.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RahulPol/js-leetcode-top-150/issues"
+  },
+  "homepage": "https://github.com/RahulPol/js-leetcode-top-150#readme",
+  "dependencies": {
+    "axios": "^1.6.7"
+  }
+}
