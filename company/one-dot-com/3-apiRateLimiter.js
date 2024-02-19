@@ -29,7 +29,7 @@ const setRateLimiter = (maxRequests, windowSizeInSecs) => {
   return (url) => {
     let currentTime = Date.now();
 
-    if (currentTime < resetTime) {
+    if (currentTime < resetTimeAt) {
       requestCount++;
       if (requestCount > maxRequests) {
         console.log(`rate limit exceeded..`);
