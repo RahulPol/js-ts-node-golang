@@ -60,7 +60,7 @@ const callMultipleAPIParallel = async () => {
   try {
     // in following statements we are not awaiting on get requests
     const responsePromise = axios.get("https://reqres.in/api/users/2");
-    const response2Promise = axios.get("https://reqres.in/api/users/3"); // <--try to put random url, you get just the error message even though rest of the APIs are successful
+    const response2Promise = axios.get("https://reqres.in/api/users/3"); // <--try to put random url, you get just the error message even though next API is successful
     const response3Promise = axios.get("https://reqres.in/api/users/4");
 
     // we are using promise.all to run all requests in parallel
@@ -109,6 +109,8 @@ const callMultipleAPIParallelV2 = async () => {
 // callMultipleAPIParallelV2();
 
 //////////////////////////////////////////// SOLUTION TO PROBLEM  //////////////////////////////////////////////////////////////////////////
+
+// Another solution available at https://javascript.info/fetch#fetch-users-from-github
 
 class Utility {
   constructor({ url, maxGet, maxPut, processFn }) {
