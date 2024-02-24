@@ -94,7 +94,7 @@ If it returns true, the search is stopped, the item is returned. If nothing foun
   if (a == b) return 0;
   if (a < b) return -1;
   }
-  let arr = [ 1, 2, 15 ];
+  let arr = [ 1, 2, 15 ]; //[7,9,4,5,8]
   arr.sort(compareNumeric);
   alert(arr); // 1, 2, 15
   ** Now it works as intended. **
