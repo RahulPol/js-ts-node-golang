@@ -56,6 +56,7 @@
 var debounce = function (fn, t) {
   let timeout;
   return function (...args) {
+    /// JUST FYI, the timeout has property called _destroyed which indicates if the timeout is expired or not, we can't use it here but keep in mind.
     if (timeout) {
       clearTimeout(timeout);
     }

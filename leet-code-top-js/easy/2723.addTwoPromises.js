@@ -44,3 +44,11 @@ var addTwoPromisesV2 = async function (promise1, promise2) {
   const result = await Promise.all([promise1, promise2]);
   return result.reduce((sum, curr) => sum + curr, 0);
 };
+
+function addTwoPromisesV3(p1, p2) {
+  return new Promise((resolve) => {
+    Promise.all([p1, p2]).then((res) => {
+      resolve(res[0] + res[1]);
+    });
+  });
+}

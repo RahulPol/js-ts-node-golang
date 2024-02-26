@@ -71,61 +71,36 @@
 // 0 <= t <= 1000
 // fn returns a promise
 
-// SOLUTION: even if it works its incorrect
+// SOLUTION: simple
 
-var timeLimit = function (fn, t) {
-  return async function (...args) {
-    try {
-      let startTime = performance.now();
-      const result = await fn(...args);
-      let endTime = performance.now();
-      if (endTime - startTime <= t) {
-        return Promise.resolve(result);
-      } else {
-        return Promise.reject("Time Limit Exceeded");
-      }
-    } catch {
-      return Promise.reject("Error");
-    }
+function promiseTimeLimit(fn, timeLimit) {
+  let result;
+
+  return function (...args) {
+    return new Promise((resolve, reject) => {
+      fn(...args).then((res) => (result = res));
+
+      setTimeout(() => {
+        if (result) {
+          resolve(result);
+        }
+        reject("time limit exceeded");
+      }, timeLimit);
+    });
   };
-};
+}
 
-let fn, inputs, t;
+// const fn = async (n) => {
+//     await new Promise((res) => setTimeout(res, 100));
+//     return n * n;
+//   },
+//   inputs = [5],
+//   t = 150;
 
-// fn = async (n) => {
-//   await new Promise((res) => setTimeout(res, 100));
-//   return n * n;
-// };
-//  inputs = [5];
-//  t = 50;
-
-//  fn = async (n) => {
-//   await new Promise((res) => setTimeout(res, 100));
-//   return n * n;
-// };
-//  inputs = [5];
-//  t = 150;
-
-// fn = async (a, b) => {
-//   await new Promise((res) => setTimeout(res, 120));
-//   return a + b;
-// };
-// inputs = [5, 10];
-// t = 150;
-
-// fn = async () => {
-//   throw "Error";
-// };
-// inputs = [];
-// t = 1000;
-
-// const check = async () => {
-//   const limited = timeLimit(fn, t);
-//   const res = await limited(...inputs);
-//   console.log(res);
-// };
-
-// check();
+// const timeLimitedPromise = promiseTimeLimit(fn, t);
+// timeLimitedPromise(inputs)
+//   .then((res) => console.log(res))
+//   .catch((reason) => console.log(reason));
 
 // SOLUTION: but thenable result is not coming.. Check later
 var timeLimitV2 = function (fn, t) {

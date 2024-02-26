@@ -1,5 +1,6 @@
 // 2635. Apply transform over each element in array
-// Given an integer array arr and a mapping function fn, return a new array with a transformation applied to each element.
+
+// Problem: Given an integer array arr and a mapping function fn, return a new array with a transformation applied to each element.
 
 // The returned array should be created such that returnedArray[i] = fn(arr[i], i).
 

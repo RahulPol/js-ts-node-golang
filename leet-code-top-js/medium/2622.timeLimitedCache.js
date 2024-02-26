@@ -9,11 +9,9 @@
 
 // count(): returns the count of un-expired keys.
 
- 
-
 // Example 1:
 
-// Input: 
+// Input:
 // actions = ["TimeLimitedCache", "set", "get", "count", "get"]
 // values = [[], [1, 42, 100], [1], [], [1]]
 // timeDelays = [0, 0, 50, 50, 150]
@@ -27,7 +25,7 @@
 // At t=150, get(1) is called but -1 is returned because the cache is empty.
 // Example 2:
 
-// Input: 
+// Input:
 // actions = ["TimeLimitedCache", "set", "set", "get", "get", "get", "count"]
 // values = [[], [1, 42, 50], [1, 50, 100], [1], [1], [1], []]
 // timeDelays = [0, 0, 40, 50, 120, 200, 250]
@@ -41,7 +39,6 @@
 // At t=140, key=1 expires.
 // At t=200, get(1) is called but the cache is empty so -1 is returned.
 // At t=250, count() returns 0 because the cache is empty.
- 
 
 // Constraints:
 
@@ -56,12 +53,11 @@
 
 // SOLUTION: slow
 
-
 // var TimeLimitedCache = function() {
 //     this.map = new Map();
 // };
 
-// /** 
+// /**
 //  * @param {number} key
 //  * @param {number} value
 //  * @param {number} duration time until expiration in ms
@@ -82,7 +78,7 @@
 //    return Date.now() > expiry ? true : false;
 // }
 
-// /** 
+// /**
 //  * @param {number} key
 //  * @return {number} value associated with key
 //  */
@@ -95,7 +91,7 @@
 //     return this.isKeyExpired(expiry) ? -1:value;
 // };
 
-// /** 
+// /**
 //  * @return {number} count of non-expired keys
 //  */
 // TimeLimitedCache.prototype.count = function() {
@@ -118,32 +114,32 @@
 // console.log(timeLimitedCache.set(1, 42, 1000)); // false
 // console.log(timeLimitedCache.get(1)) // 42
 // console.log(timeLimitedCache.count()) // 1
-// setTimeout(() => {console.log(timeLimitedCache.count()) }, 3000) // 1
+// setTimeout(() => {console.log(timeLimitedCache.count()) }, 3000) // 0
 
 // SOLUTION: fast
-var TimeLimitedCache = function() {
-     this.cache = {};
-     this.activeKeysCounter = 0;
+var TimeLimitedCache = function () {
+  this.cache = {};
+  this.activeKeysCounter = 0;
 };
 
-TimeLimitedCache.prototype.set = function(key, value, duration) {
-    var keyInCache = this.cache[key];
-    keyInCache ? clearTimeout(keyInCache.timeout) : this.activeKeysCounter++;
-    
-    this.cache[key] = {
-      value: value,
-      timeout: setTimeout(() => {
-        this.cache[key].value = -1;
-        this.activeKeysCounter--;
-      }, duration),
-    }
-    return Boolean(keyInCache);
+TimeLimitedCache.prototype.set = function (key, value, duration) {
+  var keyInCache = this.cache[key];
+  keyInCache ? clearTimeout(keyInCache.timeout) : this.activeKeysCounter++;
+
+  this.cache[key] = {
+    value: value,
+    timeout: setTimeout(() => {
+      this.cache[key].value = -1;
+      this.activeKeysCounter--;
+    }, duration),
+  };
+  return Boolean(keyInCache);
 };
 
-TimeLimitedCache.prototype.get = function(key) {
-    return this.cache[key]?.value || -1;
+TimeLimitedCache.prototype.get = function (key) {
+  return this.cache[key]?.value || -1;
 };
 
-TimeLimitedCache.prototype.count = function() {
-    return this.activeKeysCounter;
+TimeLimitedCache.prototype.count = function () {
+  return this.activeKeysCounter;
 };

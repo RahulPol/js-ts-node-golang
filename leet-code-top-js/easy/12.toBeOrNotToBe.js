@@ -10,4 +10,5 @@ var expect = function (val) {
   return { toBe, notToBe };
 };
 
+// Note the method chaining here, without using this. Need to check in details
 console.log(expect(5).toBe(null));

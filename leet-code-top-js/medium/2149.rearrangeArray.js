@@ -1,8 +1,6 @@
 // 2149. Rearrange Array Elements by Sign
 // Medium
-// Topics
-// Companies
-// Hint
+
 // You are given a 0-indexed integer array nums of even length consisting of an equal number of positive and negative integers.
 
 // You should rearrange the elements of nums such that the modified array follows the given conditions:

@@ -66,45 +66,108 @@
 // 0 <= functions.length <= 10
 // 1 <= n <= 10
 
-function promisePool(functionArr, poolLimit) {
-  return function () {
-    const poolArr = [];
-    let counter = 0;
-    return new Promise(async (resolve, reject) => {
-      for (const func of functionArr) {
-        try {
-          poolArr.push(func());
-          if (poolArr.length !== poolLimit) {
-            continue;
-          }
-          const result = await Promise.all(poolArr);
-          ++counter;
-          //   let promisePool = functionArr.slice(i, i + poolLimit);
-          //   const reuslt = await Promise.all(promisePool);
-          //   console.log(`resolved till ${i}`);
-          //   i = i + promisePool;
-          //   if (i == 2) {
-          //     resolve();
-          //   }
-          // console.log(promisePool);
-          // return Promise.all(promisePool)
-          //   .then((res) => {
-          //     console.log("resolved at ", Date.now.toString());
-          //     i = i + poolLimit;
-          //     if (i == functionArr.length - 1) {
-          //       return resolve(res);
-          //     }
-          //   })
-          //   .catch((err) => reject(err));
-        } catch (err) {
-          reject(err);
+// The following function takes array of functions and execute them in lots, the second lot start only after completion of first lot. But that is not our goal.
+
+function promisePoolPre(fnArray, limit) {
+  return new Promise(async (resolve, reject) => {
+    for (let i = 0; i < fnArray.length; i = i + limit) {
+      try {
+        const functions = fnArray.slice(i, i + limit);
+        const promises = functions.map((fn) => fn());
+        const result = await Promise.all(promises);
+        console.log(i);
+        if (i == fnArray.length - 1) {
+          resolve();
         }
+      } catch (err) {
+        reject();
       }
-      resolve();
-      console.log(`outside of for loop ${counter}`);
-    });
-  };
+    }
+  });
 }
+
+const functionsArr = [
+  () => new Promise((res) => setTimeout(res, 300)),
+  () => new Promise((res) => setTimeout(res, 400)),
+  () => new Promise((res) => setTimeout(res, 200)),
+];
+n = 2;
+
+// const d = functions.slice(0, 2);
+// console.log(d);
+
+const startTime = performance.now();
+
+promisePoolPre(functionsArr, n).then((res) =>
+  console.log(performance.now() - start)
+); // 600ms, as in the first loop 2 promises executes which will be done at 400ms. then in the next iteration next 200ms will be done thus total = 400ms + 200ms
+
+// The following code works as expected, checkout V3 for more cleaner approach
+function promisePool(fnArray, limit) {
+  let promises = [];
+  let promiseCount = 0;
+  let resolveCount = 0;
+  let currPromise = 0;
+  return new Promise((resolve) => {
+    // for (let i = 0; i < fnArray.length; i++) {
+    //   promises.push(fnArray[i]());
+    // }
+
+    function recursiveCall() {
+      if (resolveCount == fnArray.length && promiseCount == 0) {
+        resolve();
+      }
+
+      if (promiseCount <= limit && currPromise < fnArray.length) {
+        promiseCount++;
+        fnArray[currPromise++]().then((res) => {
+          console.log(res);
+          promiseCount--;
+          resolveCount++;
+          recursiveCall();
+        });
+      }
+    }
+
+    recursiveCall();
+
+    //////////// FIRST TRY TO UNDERSTAND FOLLOWING, THEN UNDERSTANDING RECURRSION WOULD BE EASY//////
+
+    // for (let i = 0; i < fnArray.length; i++) {
+    //   promises.push(fnArray[i]());
+    // }
+
+    // promises.forEach((promise) => {
+    //   promiseCount++;
+    //   if (promiseCount <= limit) {
+    //     // start promises in parallel until the limit specified
+    //     promise.then((res) => {
+    //       promiseCount--;
+    //       resolveCount++;
+    //       // when any promise is resolved add another promise, but there can be n-limit number of promises pending
+    //       // so need a way to repeat the process of if loop, thus better go for recurssion
+    //       promises[promiseCount].then();
+    //       if (resolveCount == fnArray.length) {
+    //         resolve();
+    //       }
+    //     });
+    //   }
+    // });
+  });
+}
+
+// const functions = [
+//     () => new Promise((res) => setTimeout(res("first called"), 300)),
+//     () => new Promise((res) => setTimeout(res("second called"), 400)),
+//     () => new Promise((res) => setTimeout(res("third called"), 200)),
+//   ],
+//   n = 2;
+
+// const start = performance.now();
+
+// promisePool(functions, n).then((r) => {
+//   console.log(performance.now() - start);
+// });
 
 // let functions = [
 //     () => new Promise((res) => setTimeout(res, 300)),
@@ -119,43 +182,6 @@ function promisePool(functionArr, poolLimit) {
 // pool()
 //   .then((res) => console.log(Date.now() - start))
 //   .catch((err) => console.log(err));
-
-function promisePoolV2(functionArr, poolLimit) {
-  let inProgress = 0;
-  let totalResolve = 0;
-  let currIndex = 0;
-
-  return function () {
-    return new Promise(async (resolve) => {
-      while (currIndex < functionArr.length) {
-        if (inProgress < poolLimit) {
-          inProgress++;
-          let promise = functionArr[currIndex]();
-          currIndex++;
-          promise.then((res) => {
-            inProgress--;
-            totalResolve++;
-          });
-        }
-      }
-      resolve();
-    });
-  };
-}
-
-let functions = [
-    () => new Promise((res) => setTimeout(res, 300)),
-    () => new Promise((res) => setTimeout(res, 400)),
-    () => new Promise((res) => setTimeout(res, 200)),
-  ],
-  n = 2;
-
-let start = Date.now();
-const pool = promisePoolV2(functions, n);
-
-pool()
-  .then((res) => console.log(Date.now() - start))
-  .catch((err) => console.log(err));
 
 function promisePoolV3(functions, n) {
   let inProgressCount = 0;

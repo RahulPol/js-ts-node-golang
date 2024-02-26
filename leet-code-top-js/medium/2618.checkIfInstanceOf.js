@@ -1,9 +1,8 @@
 // 2618. Check if Object Instance of Class
 // Solved
 // Medium
-// Companies
-// Hint
-// Write a function that checks if a given value is an instance of a given class or superclass. For this problem, an object is considered an instance of a given class if that object has access to that class's methods.
+
+// Problem: Write a function that checks if a given value is an instance of a given class or superclass. For this problem, an object is considered an instance of a given class if that object has access to that class's methods.
 
 // There are no constraints on the data types that can be passed to the function. For example, the value or the class could be undefined.
 
@@ -48,8 +47,7 @@ var checkIfInstanceOf = function (obj, classFunction) {
     if (obj.constructor === classFunction) {
       return true;
     }
-    // obj = Object.getPrototypeOf(obj); OR
-    obj = obj["__proto__"];
+    // obj = Object.getPrototypeOf(obj); OR obj = obj["__proto__"];
   }
   return false;
 };

@@ -78,7 +78,7 @@ const ans = [];
 var flatV2 = function (arr, n) {
   for (const x of arr) {
     if (Array.isArray(x) && n > 0) {
-      ans.push(...flat(x, n - 1));
+      ans.push(...flatV2(x, n - 1));
     } else {
       ans.push(x);
     }

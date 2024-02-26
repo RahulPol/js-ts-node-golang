@@ -14,6 +14,7 @@
 // Explanation: fn returns the value for the "x" key. So the array is sorted based on that value.
 // Example 3:
 
+////////////////// THIS IS A GOOD EXAMPLE, you may get problem statement as sort array by second index value/////////////////
 // Input: arr = [[3, 4], [5, 2], [10, 1]], fn = (x) => x[1]
 // Output: [[10, 1], [5, 2], [3, 4]]
 // Explanation: arr is sorted in ascending order by number at index=1.
