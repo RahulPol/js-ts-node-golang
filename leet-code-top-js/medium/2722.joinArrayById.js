@@ -120,3 +120,20 @@ console.log(
     [{ id: 1, b: { c: 84 }, v: [1, 3] }]
   )
 );
+
+/// FOUND ANOTHER SOLUTION
+
+function joinArrayById(arr1, arr2) {
+  const result = arr1;
+  for (let i = 0; i < arr2.length; i++) {
+    const item = arr2[i];
+    const foundIndex = result.findIndex((r) => r.id === item.id);
+    if (foundIndex !== -1) {
+      result[foundIndex] = item;
+    } else {
+      result.push(item);
+    }
+  }
+
+  return result;
+}

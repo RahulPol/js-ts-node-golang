@@ -87,7 +87,7 @@ class User {
   };
 }
 
-let user2 = new User();
+// let user2 = new User();
 // user2.sayHello();
 // user2.sayHelloArw();
 
@@ -134,4 +134,41 @@ let ladder = {
   },
 };
 
-ladder.up().up().down().showStep().down().showStep(); // shows 1 then 0
+// ladder.up().up().down().showStep().down().showStep(); // shows 1 then 0
+
+function sum(a, b, c) {
+  return a + b + c;
+}
+
+function curry(func) {
+  const funcArgumentLength = func.length;
+
+  return function curried(...args) {
+    if (args.length >= funcArgumentLength) {
+      return func.apply(this, args);
+    } else {
+      return function (...args2) {
+        return curried.apply(this, args.concat(args2));
+      };
+    }
+  };
+}
+
+// When we run it, there are two if execution branches:
+
+// If passed args count is the same or more than the original function has in its definition (func.length) , then just pass the call to it using func.apply.
+// Otherwise, get a partial: we don’t call func just yet. Instead, another wrapper is returned, that will re-apply curried providing previous arguments together with the new ones.
+
+const curriedSum = curry(sum);
+
+console.log(curriedSum(1)(2, 3));
+console.log(curriedSum(1, 2)(3));
+console.log(curriedSum()(1, 2, 3));
+console.log(curriedSum(1)(2)(3));
+
+function sumV2(a) {
+  return function (b) {
+    if (b) return a + b;
+    return a;
+  };
+}

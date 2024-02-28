@@ -74,6 +74,28 @@
 
 // console.log(convert({ a: 10, b: 20, c: [1, 2, 3] }));
 
+// ANOTHER SOLUTION
+// function valueToJson(value) {
+//   if (Array.isArray(value)) {
+//     let result = "[";
+//     for (const item of value) {
+//       result += `${valueToJson(item)},`;
+//     }
+//     result += "]";
+//     return result;
+//   } else if (value === null) {
+//     return "null";
+//   } else if (typeof value === "object") {
+//     let result = [];
+//     for (const key in value) {
+//       result.push(`"${key}": ${valueToJson(value[key])}`);
+//     }
+//     return `{${result.join(",")}}`;
+//   } else {
+//     return typeof value === "string" ? `"${value}"` : value;
+//   }
+// }
+
 // SOLUTION: best
 
 function valueToJson(value) {

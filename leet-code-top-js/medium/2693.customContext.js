@@ -1,4 +1,4 @@
-// 2693. Call function with custom contex
+// 2693. Call function with custom context
 
 // Enhance all functions to have the callPolyfill method. The method accepts an object obj as it's first parameter and any number of additional arguments. The obj becomes the this context for the function. The additional arguments are passed to the function (that the callPolyfill method belongs on).
 
