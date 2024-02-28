@@ -1,3 +1,4 @@
+// type declaration for function (similar to arrow function but its just a declaration)
 type Add = (a: number, b: number) => number;
 
 let add: Add;

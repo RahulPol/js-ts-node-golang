@@ -1,4 +1,5 @@
-type Point = { x: number, y: number };
+// type declaration for object
+type Point = { x: number; y: number };
 
 let center: Point = {
   x: 0,
