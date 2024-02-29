@@ -1,0 +1,28 @@
+1. SOLID principles
+    /SOLID
+2. Design patterns
+    /Design patterns
+3. Node js interview questions
+    https://www.simplilearn.com/tutorials/nodejs-tutorial/nodejs-interview-questions
+3. React interview Questions
+    https://github.com/sudheerj/reactjs-interview-questions
+    https://www.interviewbit.com/react-interview-questions/
+4. javascript interview questions 
+    https://github.com/sudheerj/javascript-interview-questions?tab=readme-ov-file#table-of-contents
+3. Node js / Javascript Security
+    https://cheatsheetseries.owasp.org/cheatsheets/Nodejs_Security_Cheat_Sheet.html
+    https://infosec.mozilla.org/guidelines/web_security.html#web-security-cheat-sheet
+
+
+Miscellaneous
+- check the jest + RTL in last project
+- check how OAuth works in express
+- event loop in javascript and node js
+- multithreading in javascript and node js 
+- read microservices interview questions 
+- go through code of leanpos to check azure event hub
+
+
+CHECK YOUR RESUME BEFORE INTERVIEW
+DO NOT FORGET TO RECORD INTERVIEW
+
