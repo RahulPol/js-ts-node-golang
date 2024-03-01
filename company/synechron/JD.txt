@@ -1,0 +1,10 @@
+Node JS - API Banking
+End to End APIs 
+Design Patterns
+Security standards
+Authentication 
+Network
+Kafka 
+Mongo DB
+Microservices architecture
+Java

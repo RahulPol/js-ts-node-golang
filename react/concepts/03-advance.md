@@ -46,8 +46,8 @@
 - in the beginning examples with numbers and buttons :):):)
 
 ```js
-import Starter from './tutorial/1-useState/starter/1-error-example';
-import Final from './tutorial/1-useState/final/1-error-example';
+import Starter from "./tutorial/1-useState/starter/1-error-example";
+import Final from "./tutorial/1-useState/final/1-error-example";
 function App() {
   return (
     <div className="container">
@@ -63,7 +63,7 @@ export default App;
 #### The Need For State
 
 ```js
-import Starter from './tutorial/01-useState/starter/01-error-example.jsx';
+import Starter from "./tutorial/01-useState/starter/01-error-example.jsx";
 ```
 
 - in App.jsx setup import and container div
@@ -101,7 +101,7 @@ export default ErrorExample;
 #### useState Basics
 
 ```js
-import Starter from './tutorial/01-useState/starter/02-useState-basics.jsx';
+import Starter from "./tutorial/01-useState/starter/02-useState-basics.jsx";
 ```
 
 [Javascript Nuggets - Destructuring (Array)](https://www.youtube.com/watch?v=qhECs40xMec&list=PLnHJACx3NwAfRUcuKaYhZ6T5NRIpzgNGJ&index=7&t=9s)
@@ -112,7 +112,7 @@ import Starter from './tutorial/01-useState/starter/02-useState-basics.jsx';
 - state update triggers re-render
 
 ```js
-import { useState } from 'react';
+import { useState } from "react";
 
 const UseStateBasics = () => {
   // console.log(useState()); <-- [undefined, function(){}]
@@ -127,6 +127,7 @@ const UseStateBasics = () => {
     setCount(count + 1);
     // be careful, we can set any value
     // setCount('pants');
+    // To avoid use Typescript
   };
   return (
     <div>
@@ -164,7 +165,7 @@ There are a few ways that you can trigger a re-render in a React component:
 #### useState with Array
 
 ```js
-import Starter from './tutorial/01-useState/starter/03-useState-array.jsx';
+import Starter from "./tutorial/01-useState/starter/03-useState-array.jsx";
 ```
 
 Setup Challenge :
@@ -182,8 +183,8 @@ Setup Challenge :
 1. render the list
 
 ```js
-import React from 'react';
-import { data } from '../../../data';
+import React from "react";
+import { data } from "../../../data";
 const UseStateArray = () => {
   const [people, setPeople] = React.useState(data);
 
@@ -209,8 +210,8 @@ export default UseStateArray;
 [Javascript Nuggets - Filter and Find](https://www.youtube.com/watch?v=KeYxsev737s&list=PLnHJACx3NwAfRUcuKaYhZ6T5NRIpzgNGJ&index=4)
 
 ```js
-import React from 'react';
-import { data } from '../../../data';
+import React from "react";
+import { data } from "../../../data";
 const UseStateArray = () => {
   const [people, setPeople] = React.useState(data);
 
@@ -231,7 +232,7 @@ const UseStateArray = () => {
       })}
       <button
         className="btn"
-        style={{ marginTop: '2rem' }}
+        style={{ marginTop: "2rem" }}
         onClick={() => setPeople([])}
       >
         clear items
@@ -248,7 +249,7 @@ export default UseStateArray;
 #### useState with Object
 
 ```js
-import Starter from './tutorial/01-useState/starter/04-useState-object.jsx';
+import Starter from "./tutorial/01-useState/starter/04-useState-object.jsx";
 ```
 
 Setup Challenge :
@@ -265,17 +266,17 @@ Setup Challenge :
   new person is displayed in the browser
 
 ```js
-import { useState } from 'react';
+import { useState } from "react";
 
 const UseStateObject = () => {
-  const [name, setName] = useState('peter');
+  const [name, setName] = useState("peter");
   const [age, setAge] = useState(24);
-  const [hobby, setHobby] = useState('read books');
+  const [hobby, setHobby] = useState("read books");
 
   const displayPerson = () => {
-    setName('john');
+    setName("john");
     setAge(28);
-    setHobby('scream at the computer');
+    setHobby("scream at the computer");
   };
   return (
     <>
@@ -303,17 +304,17 @@ React 18 ensures that state updates invoked from any location will be batched by
 #### Switch to Object
 
 ```js
-import { useState } from 'react';
+import { useState } from "react";
 
 const UseStateObject = () => {
   const [person, setPerson] = useState({
-    name: 'peter',
+    name: "peter",
     age: 24,
-    hobby: 'read books',
+    hobby: "read books",
   });
 
   const displayPerson = () => {
-    setPerson({ name: 'john', age: 28, hobby: 'scream at the computer' });
+    setPerson({ name: "john", age: 28, hobby: "scream at the computer" });
     // be careful, don't overwrite
     // setPerson('shakeAndBake');
     // setPerson({ name: 'susan' });
@@ -337,7 +338,7 @@ export default UseStateObject;
 #### Set Function "Gotcha"
 
 ```js
-import Starter from './tutorial/01-useState/starter/05-useState-gotcha.jsx';
+import Starter from "./tutorial/01-useState/starter/05-useState-gotcha.jsx";
 ```
 
 Setup Challenge :
@@ -351,7 +352,7 @@ Keep in mind that the state update function setState does not immediately mutate
 trivial example
 
 ```js
-import { useState } from 'react';
+import { useState } from "react";
 
 const UseStateGotcha = () => {
   const [value, setValue] = useState(0);
@@ -359,7 +360,7 @@ const UseStateGotcha = () => {
   const handleClick = () => {
     setValue(value + 1);
     //  be careful it's the old value
-    console.log(value);
+    console.log(value); // 0
     //  so if you have any functionality
     // that relies on the latest value
     // it will be wrong !!!
@@ -407,7 +408,7 @@ const handleClick = () => {
   //   setValue(value + 1);
   // }, 3000);
   setTimeout(() => {
-    console.log('clicked the button');
+    console.log("clicked the button");
     setValue((currentState) => {
       return currentState + 1;
     });
@@ -422,16 +423,16 @@ const handleClick = () => {
 #### Code Example - infinite loop in React
 
 ```js
-import Starter from './tutorial/02-useEffect/starter/01-code-example.jsx';
+import Starter from "./tutorial/02-useEffect/starter/01-code-example.jsx";
 ```
 
 ```js
-import { useState } from 'react';
+import { useState } from "react";
 
 const ComponentExample = () => {
   const [value, setValue] = useState(0);
   const sayHello = () => {
-    console.log('hello there');
+    console.log("hello there");
     // be careful
     // setValue(value + 1);
   };
@@ -454,7 +455,7 @@ export default ComponentExample;
 const [value, setValue] = useState(0);
 
 const sayHello = () => {
-  console.log('hello there');
+  console.log("hello there");
   // be careful, you will have infinite loop
   setValue(value + 1);
 };
@@ -477,10 +478,10 @@ sayHello();
 #### useEffect Basics
 
 ```js
-import Starter from './tutorial/02-useEffect/starter/02-useEffect-basics.jsx';
+import Starter from "./tutorial/02-useEffect/starter/02-useEffect-basics.jsx";
 ```
 
-useEffect is a hook in React that allows you to perform side effects in function components.There is no need for urban dictionary - basically any work outside of the component. Some examples of side effects are: subscriptions, fetching data, directly updating the DOM, event listeners, timers, etc.
+useEffect is a hook in React that allows you to perform side effects in function components.There is no need for urban dictionary - basically any work outside of component rendering. Some examples of side effects are: subscriptions, fetching data, directly updating the DOM, event listeners, timers, etc. as these tasks are not related to ui rendering of given component. Of course after completion of these task you might want to re-render your component but completing task like sending GET request, accepting data or error for the request has nothing to do with component ui rendering.
 
 - useEffect hook
 - accepts two arguments (second optional)
@@ -492,14 +493,14 @@ useEffect is a hook in React that allows you to perform side effects in function
 - if dependency array empty [] runs only on initial render
 
 ```js
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 const UseEffectBasics = () => {
   const [value, setValue] = useState(0);
 
   // this will run on every re-render
   const sayHello = () => {
-    console.log('hello there');
+    console.log("hello there");
   };
 
   sayHello();
@@ -510,7 +511,7 @@ const UseEffectBasics = () => {
 
   // this will run only when component initialized
   useEffect(() => {
-    console.log('hello from useEffect');
+    console.log("hello from useEffect");
   }, []);
   return (
     <div>
@@ -527,11 +528,11 @@ export default UseEffectBasics;
 #### Multiple Effects
 
 ```js
-import Starter from './tutorial/02-useEffect/starter/03-multiple-effects.jsx';
+import Starter from "./tutorial/02-useEffect/starter/03-multiple-effects.jsx";
 ```
 
 ```js
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 const MultipleEffects = () => {
   const [value, setValue] = useState(0);
@@ -539,12 +540,12 @@ const MultipleEffects = () => {
 
   // this will run when component initialized as well as on every change of value
   useEffect(() => {
-    console.log('hello from first useEffect');
+    console.log("hello from first useEffect");
   }, [value]);
 
   // this will run when component initialized as well as on every change of secondValue
   useEffect(() => {
-    console.log('hello from second useEffect');
+    console.log("hello from second useEffect");
   }, [secondValue]);
   return (
     <div>
@@ -565,7 +566,7 @@ export default MultipleEffects;
 #### Fetch Data
 
 ```js
-import Starter from './tutorial/02-useEffect/starter/04-fetch-data.jsx';
+import Starter from "./tutorial/02-useEffect/starter/04-fetch-data.jsx";
 ```
 
 [Javascript Nuggets - Fetch API](https://www.youtube.com/watch?v=C_VIKzfpRrg&list=PLnHJACx3NwAfRUcuKaYhZ6T5NRIpzgNGJ&index=18&t=343s)
@@ -587,9 +588,9 @@ Setup Challenge :
 - DON'T WORRY ABOUT CSS, MOST IMPORTANT LOGIC !!!
 
 ```js
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
-const url = 'https://api.github.com/users';
+const url = "https://api.github.com/users";
 
 const FetchData = () => {
   const [users, setUsers] = useState([]);
@@ -605,7 +606,7 @@ const FetchData = () => {
         if (!response.ok) {
           // Handle the error based on the status code
           if (response.status === 404) {
-            throw new Error('Resource not found');
+            throw new Error("Resource not found");
           } else {
             throw new Error(`HTTP error! Status: ${response.status}`);
           }
@@ -646,7 +647,7 @@ export default FetchData;
 #### Cleanup Function
 
 ```js
-import Starter from './tutorial/02-useEffect/starter/05-cleanup-function.jsx';
+import Starter from "./tutorial/02-useEffect/starter/05-cleanup-function.jsx";
 ```
 
 Will Cover After 03-conditional-rendering
@@ -657,9 +658,12 @@ Will Cover After 03-conditional-rendering
 - in jsx return button which toggles state value
 - based on condition return second component (simple return)
 - inside second component create useEffect and run it only on initial render
+- You will observe whenever you click on toggle the RandomComponent's useEffect runs
+- If you add a continuous running function, add event listener or open resource then it will stay open until
+  you close it using cleanup function
 
 ```js
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 const CleanupFunction = () => {
   const [toggle, setToggle] = useState(false);
@@ -674,7 +678,7 @@ const CleanupFunction = () => {
 };
 const RandomComponent = () => {
   useEffect(() => {
-    console.log('hmm, this is interesting');
+    console.log("hmm, this is interesting");
   }, []);
   return <h1>hello there</h1>;
 };
@@ -685,7 +689,7 @@ Vanilla JS
 
 ```js
 const intID = setInterval(() => {
-  console.log('hello from interval');
+  console.log("hello from interval");
 }, 1000);
 clearInterval(intID);
 ```
@@ -694,12 +698,12 @@ clearInterval(intID);
 const someFunc = () => {
   // some logic here
 };
-window.addEventListener('scroll', someFunc);
-window.removeEventListener('scroll', someFunc);
+window.addEventListener("scroll", someFunc);
+window.removeEventListener("scroll", someFunc);
 ```
 
 ```js
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 const CleanupFunction = () => {
   const [toggle, setToggle] = useState(false);
@@ -716,7 +720,7 @@ const RandomComponent = () => {
   useEffect(() => {
     // console.log('hmm, this is interesting');
     const intID = setInterval(() => {
-      console.log('hello from interval');
+      console.log("hello from interval");
     }, 1000);
     // does not stop, keeps going
     // every time we render component new interval gets created
@@ -735,8 +739,8 @@ useEffect(() => {
   const someFunc = () => {
     // some logic here
   };
-  window.addEventListener('scroll', someFunc);
-  return () => window.removeEventListener('scroll', someFunc);
+  window.addEventListener("scroll", someFunc);
+  return () => window.removeEventListener("scroll", someFunc);
 }, []);
 ```
 
@@ -751,10 +755,10 @@ useEffect(() => {
   replaced by libraries - react query, rtk query, swr or next.js
 
 ```js
-import { useHook } from 'library';
+import { useHook } from "library";
 
 function Example() {
-  const { data, error, isLoading } = useHook('url', fetcher);
+  const { data, error, isLoading } = useHook("url", fetcher);
 
   if (error) return <div>failed to load</div>;
   if (isLoading) return <div>loading...</div>;
@@ -767,7 +771,7 @@ function Example() {
 #### Multiple Returns - Basics
 
 ```js
-import Starter from './tutorial/03-conditional-rendering/starter/01-multiple-returns-basics.jsx';
+import Starter from "./tutorial/03-conditional-rendering/starter/01-multiple-returns-basics.jsx";
 ```
 
 Vanilla JS
@@ -779,10 +783,10 @@ const sayHello = (name) => {
     // exit the function, skip rest of the code
   }
   // so if name provided, won't get to this line
-  return 'Hello, there';
+  return "Hello, there";
 };
 
-const firstResp = sayHello('john');
+const firstResp = sayHello("john");
 console.log(firstResp); // Hello, john
 const secondResp = sayHello();
 console.log(secondResp); // Hello, there
@@ -791,7 +795,7 @@ console.log(secondResp); // Hello, there
 - if no explicit return by default function returns 'undefined'
 
 ```js
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 const MultipleReturnsBasics = () => {
   // while fetching data
@@ -818,7 +822,7 @@ export default MultipleReturnsBasics;
 #### Multiple Returns - Fetch Data
 
 ```js
-import Starter from './tutorial/03-conditional-rendering/starter/02-multiple-returns-fetch-data.jsx';
+import Starter from "./tutorial/03-conditional-rendering/starter/02-multiple-returns-fetch-data.jsx";
 ```
 
 Setup Challenge :
@@ -830,8 +834,8 @@ Setup Challenge :
 - if you see user object in the console, continue with the videos
 
 ```js
-import { useEffect, useState } from 'react';
-const url = 'https://api.github.com/users/QuincyLarson';
+import { useEffect, useState } from "react";
+const url = "https://api.github.com/users/QuincyLarson";
 
 const MultipleReturnsFetchData = () => {
   const [user, setUser] = useState(null);
@@ -865,8 +869,8 @@ Data Fetching :
   - success - received data (display data)
 
 ```js
-import { useEffect, useState } from 'react';
-const url = 'https://api.github.com/users/QuincyLarson';
+import { useEffect, useState } from "react";
+const url = "https://api.github.com/users/QuincyLarson";
 
 const MultipleReturnsFetchData = () => {
   // convention to setup booleans with isSomething
@@ -903,7 +907,7 @@ const MultipleReturnsFetchData = () => {
   return (
     <div>
       <img
-        style={{ width: '150px', borderRadius: '25px' }}
+        style={{ width: "150px", borderRadius: "25px" }}
         src={user.avatar_url}
         alt={user.name}
       />
@@ -919,7 +923,7 @@ export default MultipleReturnsFetchData;
 #### Fetch Errors "Gotcha" (optional)
 
 ```js
-import Starter from './tutorial/03-conditional-rendering/starter/02-multiple-returns-fetch-data.jsx';
+import Starter from "./tutorial/03-conditional-rendering/starter/02-multiple-returns-fetch-data.jsx";
 ```
 
 Unlike for example Axios, by default, the fetch() API does not consider HTTP status codes in the 4xx or 5xx range to be errors. Instead, it considers these status codes to be indicative of a successful request,
@@ -944,7 +948,7 @@ setUser(user);
 #### Order Matters - Setup
 
 ```js
-import Starter from './tutorial/03-conditional-rendering/starter/02-multiple-returns-fetch-data.jsx';
+import Starter from "./tutorial/03-conditional-rendering/starter/02-multiple-returns-fetch-data.jsx";
 ```
 
 Please don't dismiss this topic. A lot of questions in course Q&A.
@@ -958,7 +962,7 @@ Challenge :
 return (
   <div>
     <img
-      style={{ width: '100px', borderRadius: '25px' }}
+      style={{ width: "100px", borderRadius: "25px" }}
       src={avatar_url}
       alt={name}
     />
@@ -991,7 +995,7 @@ const { avatar_url, name, company, bio } = user;
 return (
   <div>
     <img
-      style={{ width: '100px', borderRadius: '25px' }}
+      style={{ width: "100px", borderRadius: "25px" }}
       src={avatar_url}
       alt={name}
     />
@@ -1006,7 +1010,7 @@ Vanilla JS
 
 ```js
 const someObject = {
-  name: 'jo koy',
+  name: "jo koy",
 };
 // this is cool
 someObject.name; // returns 'jo koy'
@@ -1042,11 +1046,11 @@ useEffect(() => {
 #### DON'T CALL HOOKS CONDITIONALLY And DON'T ADD HOOKS AFTER RETURN STATEMENT
 
 ```js
-import Starter from './tutorial/03-conditional-rendering/starter/03-hooks-rule.jsx';
+import Starter from "./tutorial/03-conditional-rendering/starter/03-hooks-rule.jsx";
 ```
 
 ```js
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 const Example = () => {
   const [condition, setCondition] = useState(true);
@@ -1060,7 +1064,7 @@ const Example = () => {
   }
   // this will also fail
   useEffect(() => {
-    console.log('hello there');
+    console.log("hello there");
   }, []);
   return <h2>example</h2>;
 };
@@ -1087,24 +1091,24 @@ All other values, including objects and arrays, are considered truthy.
 For example:
 
 ```js
-const x = 'Hello';
-const y = '';
+const x = "Hello";
+const y = "";
 const z = 0;
 
 if (x) {
-  console.log('x is truthy');
+  console.log("x is truthy");
 }
 
 if (y) {
-  console.log('y is truthy');
+  console.log("y is truthy");
 } else {
-  console.log('y is falsy');
+  console.log("y is falsy");
 }
 
 if (z) {
-  console.log('z is truthy');
+  console.log("z is truthy");
 } else {
-  console.log('z is falsy');
+  console.log("z is falsy");
 }
 
 // Output:
@@ -1151,10 +1155,10 @@ For example:
 
 ```js
 function displayName(name) {
-  return name || 'Anonymous';
+  return name || "Anonymous";
 }
 
-console.log(displayName('Pizza')); // Output: "Pizza"
+console.log(displayName("Pizza")); // Output: "Pizza"
 console.log(displayName()); // Output: "Anonymous"
 ```
 
@@ -1163,7 +1167,7 @@ In this example, the displayName() function returns the name property of the use
 #### Short Circuit Evaluation React - Basics
 
 ```js
-import Starter from './tutorial/03-conditional-rendering/starter/04-short-circuit-overview.jsx';
+import Starter from "./tutorial/03-conditional-rendering/starter/04-short-circuit-overview.jsx";
 ```
 
 Setup Challenge :
@@ -1175,25 +1179,25 @@ Setup Challenge :
   - && AND
 
 ```js
-import { useState } from 'react';
+import { useState } from "react";
 
 const ShortCircuitOverview = () => {
   // falsy
-  const [text, setText] = useState('');
+  const [text, setText] = useState("");
   // truthy
-  const [name, setName] = useState('susan');
+  const [name, setName] = useState("susan");
 
-  const codeExample = text || 'hello world';
+  const codeExample = text || "hello world";
 
   // can't use if statements, or any statement it has to be an expression
   return (
     <div>
       {/* {if(someCondition){"won't work"}} */}
 
-      <h4>Falsy OR : {text || 'hello world'}</h4>
-      <h4>Falsy AND {text && 'hello world'}</h4>
-      <h4>Truthy OR {name || 'hello world'}</h4>
-      <h4>Truthy AND {name && 'hello world'}</h4>
+      <h4>Falsy OR : {text || "hello world"}</h4>
+      <h4>Falsy AND {text && "hello world"}</h4>
+      <h4>Truthy OR {name || "hello world"}</h4>
+      <h4>Truthy AND {name && "hello world"}</h4>
       {codeExample}
     </div>
   );
@@ -1204,7 +1208,7 @@ export default ShortCircuitOverview;
 #### Short Circuit Evaluation in React - Common Approaches
 
 ```js
-import Starter from './tutorial/03-conditional-rendering/starter/05-short-circuit-examples.jsx';
+import Starter from "./tutorial/03-conditional-rendering/starter/05-short-circuit-examples.jsx";
 ```
 
 Vanilla JS (Optional)
@@ -1225,35 +1229,35 @@ You can use the ! operator to test if a value is not truthy or falsy:
 ```js
 let val = 0;
 if (!val) {
-  console.log('val is falsy');
+  console.log("val is falsy");
 }
 ```
 
 You can also use the ! operator to convert a value to a boolean and negate it:
 
 ```js
-let val = 'hello';
+let val = "hello";
 let bool = !val; // bool is now false
 
-val = '';
+val = "";
 bool = !val; // bool is now true
 ```
 
 ```js
-import { useState } from 'react';
+import { useState } from "react";
 
 const ShortCircuitOverview = () => {
   // falsy
-  const [text, setText] = useState('');
+  const [text, setText] = useState("");
   // truthy
-  const [name, setName] = useState('susan');
-  const [user, setUser] = useState({ name: 'john' });
+  const [name, setName] = useState("susan");
+  const [user, setUser] = useState({ name: "john" });
   const [isEditing, setIsEditing] = useState(false);
 
   // can't use if statements
   return (
     <div>
-      <h2>{text || 'default value'}</h2>
+      <h2>{text || "default value"}</h2>
       {text && (
         <div>
           <h2> whatever return</h2>
@@ -1268,8 +1272,8 @@ const ShortCircuitOverview = () => {
         </div>
       )}
       {user && <SomeComponent name={user.name} />}
-      <h2 style={{ margin: '1rem 0' }}>Ternary Operator</h2>
-      <button className="btn">{isEditing ? 'edit' : 'add'}</button>
+      <h2 style={{ margin: "1rem 0" }}>Ternary Operator</h2>
+      <button className="btn">{isEditing ? "edit" : "add"}</button>
       {user ? (
         <div>
           <h4>hello there user {user.name}</h4>
@@ -1315,7 +1319,7 @@ Jobster Example
 #### Toggle Challenge
 
 ```js
-import Starter from './tutorial/03-conditional-rendering/starter/06-toggle-challenge.jsx';
+import Starter from "./tutorial/03-conditional-rendering/starter/06-toggle-challenge.jsx";
 ```
 
 - create state value (boolean)
@@ -1327,7 +1331,7 @@ import Starter from './tutorial/03-conditional-rendering/starter/06-toggle-chall
 Initial Setup
 
 ```js
-import { useState } from 'react';
+import { useState } from "react";
 
 const ToggleChallenge = () => {
   const [showAlert, setShowAlert] = useState(false);
@@ -1365,7 +1369,7 @@ Improvements
 #### User Challenge
 
 ```js
-import Starter from './tutorial/03-conditional-rendering/starter/07-user-challenge.jsx';
+import Starter from "./tutorial/03-conditional-rendering/starter/07-user-challenge.jsx";
 ```
 
 - create state value
@@ -1379,14 +1383,14 @@ import Starter from './tutorial/03-conditional-rendering/starter/07-user-challen
 - h4 with "please login " and login button
 
 ```js
-import { useState } from 'react';
+import { useState } from "react";
 
 const UserChallenge = () => {
   const [user, setUser] = useState(null);
 
   const login = () => {
     // normally connect to db or api
-    setUser({ name: 'vegan food truck' });
+    setUser({ name: "vegan food truck" });
   };
   const logout = () => {
     setUser(null);
@@ -1444,7 +1448,7 @@ Works but eventually too many index tabs :):):)
 - create index.jsx
 
 ```js
-export { default } from './Navbar';
+export { default } from "./Navbar";
 ```
 
 #### Project Structure - Named Exports
@@ -1466,8 +1470,8 @@ A lot of work/lines of code
 - create index.jsx
 
 ```js
-import Home from './Home';
-import About from './About';
+import Home from "./Home";
+import About from "./About";
 
 export { Home, About };
 ```
@@ -1510,7 +1514,7 @@ Setup Challenge
 Yes, there will be a bug.
 
 ```js
-import { people } from '../../../data';
+import { people } from "../../../data";
 
 const List = () => {
   return (
@@ -1527,8 +1531,8 @@ export default List;
 List.jsx
 
 ```js
-import { people } from '../../../data';
-import Person from './Person';
+import { people } from "../../../data";
+import Person from "./Person";
 const List = () => {
   return (
     <div>
@@ -1544,10 +1548,10 @@ export default List;
 Person.jsx
 
 ```js
-import React from 'react';
-import avatar from '../../../assets/default-avatar.svg';
+import React from "react";
+import avatar from "../../../assets/default-avatar.svg";
 
-export function Person({ name, nickName = 'shakeAndBake', images }) {
+export function Person({ name, nickName = "shakeAndBake", images }) {
   // before optional chaining
 
   // const img =
@@ -1560,7 +1564,7 @@ export function Person({ name, nickName = 'shakeAndBake', images }) {
 
   return (
     <div>
-      <img src={img} alt={name} style={{ width: '50px' }} />
+      <img src={img} alt={name} style={{ width: "50px" }} />
       <h4>{name} </h4>
       <p>Nickname : {nickName}</p>
     </div>
@@ -1599,7 +1603,7 @@ In JavaScript, the optional chaining operator (?.) is a new feature that allows 
 For example, consider the following code, which accesses the firstName property of an object:
 
 ```js
-const person = { name: { first: 'John', last: 'Doe' } };
+const person = { name: { first: "John", last: "Doe" } };
 console.log(person.name.first);
 ```
 
@@ -1636,7 +1640,7 @@ May be appropriate for performance optimizations in specific situations.
 Controlled inputs are generally favored in most React applications for their predictability and ease of integration with the React component lifecycle.
 
 ```js
-import Starter from './tutorial/06-forms/starter/01-controlled-inputs.jsx';
+import Starter from "./tutorial/06-forms/starter/01-controlled-inputs.jsx";
 ```
 
 Setup (for all form videos)
@@ -1670,7 +1674,7 @@ export default ControlledInputs;
 #### Controlled Inputs - Complete
 
 ```js
-import Starter from './tutorial/06-forms/starter/01-controlled-inputs.jsx';
+import Starter from "./tutorial/06-forms/starter/01-controlled-inputs.jsx";
 ```
 
 - setup state values
@@ -1678,10 +1682,10 @@ import Starter from './tutorial/06-forms/starter/01-controlled-inputs.jsx';
 - setup onSubmit
 
 ```js
-import { useState } from 'react';
+import { useState } from "react";
 const ControlledInputs = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
 
   // const handleChange = (e) => {
   //   // for now we won't use it
@@ -1733,7 +1737,7 @@ export default ControlledInputs;
 #### User Challenge
 
 ```js
-import Starter from './tutorial/06-forms/starter/02-user-challenge.jsx';
+import Starter from "./tutorial/06-forms/starter/02-user-challenge.jsx";
 ```
 
 - setup controlled input (name input)
@@ -1747,10 +1751,10 @@ import Starter from './tutorial/06-forms/starter/02-user-challenge.jsx';
   - add button and setup functionality to remove user
 
 ```js
-import { useState } from 'react';
-import { data } from '../../../data';
+import { useState } from "react";
+import { data } from "../../../data";
 const UserChallenge = () => {
-  const [name, setName] = useState('');
+  const [name, setName] = useState("");
   const [users, setUsers] = useState(data);
 
   const handleSubmit = (e) => {
@@ -1767,7 +1771,7 @@ const UserChallenge = () => {
     const updatedUsers = [...users, newUser];
     setUsers(updatedUsers);
     // set back to empty
-    setName('');
+    setName("");
   };
 
   const removeUser = (id) => {
@@ -1817,7 +1821,7 @@ export default UserChallenge;
 #### Multiple Inputs
 
 ```js
-import Starter from './tutorial/06-forms/starter/03-multiple-inputs.jsx';
+import Starter from "./tutorial/06-forms/starter/03-multiple-inputs.jsx";
 ```
 
 [Javascript Nuggets - Dynamic Object Keys](https://www.youtube.com/watch?v=_qxCYtWm0tw&list=PLnHJACx3NwAfRUcuKaYhZ6T5NRIpzgNGJ&index=3&t=97s)
@@ -1825,12 +1829,12 @@ import Starter from './tutorial/06-forms/starter/03-multiple-inputs.jsx';
 - inputs must have name attribute
 
 ```js
-import { useState } from 'react';
+import { useState } from "react";
 const MultipleInputs = () => {
   const [user, setUser] = useState({
-    name: '',
-    email: '',
-    password: '',
+    name: "",
+    email: "",
+    password: "",
   });
 
   const handleChange = (e) => {
@@ -1901,15 +1905,15 @@ export default MultipleInputs;
 #### Other Inputs
 
 ```js
-import Starter from './tutorial/06-forms/starter/04-other-inputs.jsx';
+import Starter from "./tutorial/06-forms/starter/04-other-inputs.jsx";
 ```
 
 ```js
-import { useState } from 'react';
-const frameworks = ['react', 'angular', 'vue', 'svelte'];
+import { useState } from "react";
+const frameworks = ["react", "angular", "vue", "svelte"];
 const OtherInputs = () => {
   const [shipping, setShipping] = useState(false);
-  const [framework, setFramework] = useState('react');
+  const [framework, setFramework] = useState("react");
 
   const handleShipping = (e) => {
     console.log(e.target.checked);
@@ -1923,7 +1927,7 @@ const OtherInputs = () => {
       <form className="form">
         <h4>Other Inputs</h4>
         {/* name */}
-        <div className="form-row" style={{ textAlign: 'left' }}>
+        <div className="form-row" style={{ textAlign: "left" }}>
           <input
             type="checkbox"
             checked={shipping}
@@ -1933,7 +1937,7 @@ const OtherInputs = () => {
           />
           <label htmlFor="shipping"> Free Shipping </label>
         </div>
-        <div className="form-row" style={{ textAlign: 'left' }}>
+        <div className="form-row" style={{ textAlign: "left" }}>
           <label htmlFor="framework" className="form-label">
             Framework
           </label>
@@ -1961,7 +1965,7 @@ export default OtherInputs;
 #### FormData API
 
 ```js
-import Starter from './tutorial/06-forms/starter/05-form-data.jsx';
+import Starter from "./tutorial/06-forms/starter/05-form-data.jsx";
 ```
 
 [JS Nuggets - FormData API](https://youtu.be/5-x4OUM-SP8)
@@ -1972,7 +1976,7 @@ import Starter from './tutorial/06-forms/starter/05-form-data.jsx';
 The FormData interface provides a way to construct a set of key/value pairs representing form fields and their values, which can be sent using the fetch() or XMLHttpRequest.send() method. It uses the same format a form would use if the encoding type were set to "multipart/form-data".
 
 ```js
-import { useState } from 'react';
+import { useState } from "react";
 
 const UncontrolledInputs = () => {
   const [value, setValue] = useState(0);
@@ -2043,8 +2047,8 @@ The Object.fromEntries() static method transforms a list of key-value pairs into
 
 ```js
 const entries = new Map([
-  ['foo', 'bar'],
-  ['baz', 42],
+  ["foo", "bar"],
+  ["baz", 42],
 ]);
 
 const obj = Object.fromEntries(entries);
@@ -2060,7 +2064,7 @@ The reset() method is a built-in method in HTML that can be used to reset all fo
 #### useRef
 
 ```js
-import Starter from './tutorial/07-useRef/starter/01-useRef-basics.jsx';
+import Starter from "./tutorial/07-useRef/starter/01-useRef-basics.jsx";
 ```
 
 - DOES NOT TRIGGER RE-RENDER
@@ -2068,7 +2072,7 @@ import Starter from './tutorial/07-useRef/starter/01-useRef-basics.jsx';
 - target DOM nodes/elements
 
 ```js
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 const UseRefBasics = () => {
   const [value, setValue] = useState(0);
@@ -2097,7 +2101,7 @@ const UseRefBasics = () => {
       isMounted.current = true;
       return;
     }
-    console.log('re-render');
+    console.log("re-render");
   }, [value]);
 
   return (
@@ -2132,7 +2136,7 @@ export default UseRefBasics;
 #### Custom Hooks
 
 ```js
-import Starter from './tutorial/08-custom-hooks/starter/01-toggle.jsx';
+import Starter from "./tutorial/08-custom-hooks/starter/01-toggle.jsx";
 ```
 
 - same rules as regular hooks
@@ -2142,7 +2146,7 @@ import Starter from './tutorial/08-custom-hooks/starter/01-toggle.jsx';
 useToggle.js
 
 ```js
-import { useState } from 'react';
+import { useState } from "react";
 
 const useToggle = (defaultValue) => {
   const [show, setShow] = useState(defaultValue);
@@ -2167,7 +2171,7 @@ export default useToggle;
 useFetchPerson.js
 
 ```js
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 const useFetchPerson = (url) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -2208,7 +2212,7 @@ Generic Fetch
 useFetch.js
 
 ```js
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 const useFetch = (url) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -2250,7 +2254,7 @@ export default useFetch;
 #### Context API
 
 ```js
-import Starter from './tutorial/09-context-api/starter';
+import Starter from "./tutorial/09-context-api/starter";
 ```
 
 Challenge
@@ -2278,11 +2282,11 @@ Challenge
 Navbar.jsx
 
 ```js
-import { useState } from 'react';
-import NavLinks from './NavLinks';
+import { useState } from "react";
+import NavLinks from "./NavLinks";
 
 const Navbar = () => {
-  const [user, setUser] = useState({ name: 'bob' });
+  const [user, setUser] = useState({ name: "bob" });
   const logout = () => {
     setUser(null);
   };
@@ -2299,7 +2303,7 @@ export default Navbar;
 NavLinks.jsx
 
 ```js
-import UserContainer from './UserContainer';
+import UserContainer from "./UserContainer";
 
 const NavLinks = ({ user, logout }) => {
   return (
@@ -2354,10 +2358,10 @@ export default UserContainer;
 NavbarContext.jsx
 
 ```js
-import { createContext } from 'react';
-import { useContext } from 'react';
-import { useState } from 'react';
-import NavLinks from './NavLinks';
+import { createContext } from "react";
+import { useContext } from "react";
+import { useState } from "react";
+import NavLinks from "./NavLinks";
 
 export const NavbarContext = createContext();
 // returns two components
@@ -2368,7 +2372,7 @@ export const NavbarContext = createContext();
 export const useAppContext = () => useContext(NavbarContext);
 
 const Navbar = () => {
-  const [user, setUser] = useState({ name: 'bob' });
+  const [user, setUser] = useState({ name: "bob" });
   const logout = () => {
     setUser(null);
   };
@@ -2387,9 +2391,9 @@ export default Navbar;
 UserContainer.jsx
 
 ```js
-import { useContext } from 'react';
-import { NavbarContext } from './Navbar';
-import { useAppContext } from './Navbar';
+import { useContext } from "react";
+import { NavbarContext } from "./Navbar";
+import { useAppContext } from "./Navbar";
 const UserContainer = () => {
   const { user, logout } = useAppContext();
   return (
@@ -2442,7 +2446,7 @@ npm install && npm run dev
 - While useState is typically used for managing individual pieces of state, useReducer is often preferred when the state logic is more complex and involves multiple sub-values or when the next state depends on the previous state.
 
 ```js
-import Starter from './tutorial/10-useReducer/starter/01-useReducer.jsx';
+import Starter from "./tutorial/10-useReducer/starter/01-useReducer.jsx";
 ```
 
 - it's the complete file from 03-useState-array
@@ -2463,11 +2467,11 @@ const resetList = () => {
 // JSX
 {
   people.length < 1 ? (
-    <button className="btn" style={{ marginTop: '2rem' }} onClick={resetList}>
+    <button className="btn" style={{ marginTop: "2rem" }} onClick={resetList}>
       reset
     </button>
   ) : (
-    <button className="btn" style={{ marginTop: '2rem' }} onClick={clearList}>
+    <button className="btn" style={{ marginTop: "2rem" }} onClick={clearList}>
       clear
     </button>
   );
@@ -2475,8 +2479,8 @@ const resetList = () => {
 ```
 
 ```js
-import React from 'react';
-import { data } from '../../../data';
+import React from "react";
+import { data } from "../../../data";
 const ReducerBasics = () => {
   const [people, setPeople] = React.useState(data);
 
@@ -2501,7 +2505,7 @@ const ReducerBasics = () => {
       {people.length < 1 ? (
         <button
           className="btn"
-          style={{ marginTop: '2rem' }}
+          style={{ marginTop: "2rem" }}
           onClick={resetList}
         >
           reset
@@ -2509,7 +2513,7 @@ const ReducerBasics = () => {
       ) : (
         <button
           className="btn"
-          style={{ marginTop: '2rem' }}
+          style={{ marginTop: "2rem" }}
           onClick={clearList}
         >
           clear
@@ -2525,8 +2529,8 @@ export default ReducerBasics;
 #### Remove useState
 
 ```js
-import { useState, useReducer } from 'react';
-import { data } from '../../../data';
+import { useState, useReducer } from "react";
+import { data } from "../../../data";
 
 // default/initial state
 const defaultState = {
@@ -2573,7 +2577,7 @@ const ReducerBasics = () => {
       {state.people.length < 1 ? (
         <button
           className="btn"
-          style={{ marginTop: '2rem' }}
+          style={{ marginTop: "2rem" }}
           onClick={resetList}
         >
           reset
@@ -2581,7 +2585,7 @@ const ReducerBasics = () => {
       ) : (
         <button
           className="btn"
-          style={{ marginTop: '2rem' }}
+          style={{ marginTop: "2rem" }}
           onClick={clearList}
         >
           clear
@@ -2597,8 +2601,8 @@ export default ReducerBasics;
 #### First Dispatch
 
 ```js
-import { useState, useReducer } from 'react';
-import { data } from '../../../data';
+import { useState, useReducer } from "react";
+import { data } from "../../../data";
 
 const defaultState = {
   people: data,
@@ -2606,7 +2610,7 @@ const defaultState = {
 };
 
 const reducer = (state, action) => {
-  if (action.type === 'CLEAR_LIST') {
+  if (action.type === "CLEAR_LIST") {
     return { ...state, people: [] };
   }
 };
@@ -2620,7 +2624,7 @@ const ReducerBasics = () => {
   };
 
   const clearList = () => {
-    dispatch({ type: 'CLEAR_LIST' });
+    dispatch({ type: "CLEAR_LIST" });
     // setPeople([]);
   };
   const resetList = () => {
@@ -2641,7 +2645,7 @@ const ReducerBasics = () => {
       {state.people.length < 1 ? (
         <button
           className="btn"
-          style={{ marginTop: '2rem' }}
+          style={{ marginTop: "2rem" }}
           onClick={resetList}
         >
           reset
@@ -2649,7 +2653,7 @@ const ReducerBasics = () => {
       ) : (
         <button
           className="btn"
-          style={{ marginTop: '2rem' }}
+          style={{ marginTop: "2rem" }}
           onClick={clearList}
         >
           clear
@@ -2665,12 +2669,12 @@ export default ReducerBasics;
 #### Actions and Default State
 
 ```js
-import { useReducer } from 'react';
-import { data } from '../../../data';
+import { useReducer } from "react";
+import { data } from "../../../data";
 
-const CLEAR_LIST = 'CLEAR_LIST';
-const RESET_LIST = 'RESET_LIST';
-const REMOVE_ITEM = 'REMOVE_ITEM';
+const CLEAR_LIST = "CLEAR_LIST";
+const RESET_LIST = "RESET_LIST";
+const REMOVE_ITEM = "REMOVE_ITEM";
 
 const defaultState = {
   people: data,
@@ -2712,7 +2716,7 @@ const ReducerBasics = () => {
       {state.people.length < 1 ? (
         <button
           className="btn"
-          style={{ marginTop: '2rem' }}
+          style={{ marginTop: "2rem" }}
           onClick={resetList}
         >
           reset
@@ -2720,7 +2724,7 @@ const ReducerBasics = () => {
       ) : (
         <button
           className="btn"
-          style={{ marginTop: '2rem' }}
+          style={{ marginTop: "2rem" }}
           onClick={clearList}
         >
           clear
@@ -2738,12 +2742,12 @@ export default ReducerBasics;
 - setup a dispatch and handle action in the reducer
 
 ```js
-import { useReducer } from 'react';
-import { data } from '../../../data';
+import { useReducer } from "react";
+import { data } from "../../../data";
 
-const CLEAR_LIST = 'CLEAR_LIST';
-const RESET_LIST = 'RESET_LIST';
-const REMOVE_ITEM = 'REMOVE_ITEM';
+const CLEAR_LIST = "CLEAR_LIST";
+const RESET_LIST = "RESET_LIST";
+const REMOVE_ITEM = "REMOVE_ITEM";
 
 const defaultState = {
   people: data,
@@ -2789,7 +2793,7 @@ const ReducerBasics = () => {
       {state.people.length < 1 ? (
         <button
           className="btn"
-          style={{ marginTop: '2rem' }}
+          style={{ marginTop: "2rem" }}
           onClick={resetList}
         >
           reset
@@ -2797,7 +2801,7 @@ const ReducerBasics = () => {
       ) : (
         <button
           className="btn"
-          style={{ marginTop: '2rem' }}
+          style={{ marginTop: "2rem" }}
           onClick={clearList}
         >
           clear
@@ -2816,12 +2820,12 @@ export default ReducerBasics;
 - hint extra property in the object
 
 ```js
-import { useReducer } from 'react';
-import { data } from '../../../data';
+import { useReducer } from "react";
+import { data } from "../../../data";
 
-const CLEAR_LIST = 'CLEAR_LIST';
-const RESET_LIST = 'RESET_LIST';
-const REMOVE_ITEM = 'REMOVE_ITEM';
+const CLEAR_LIST = "CLEAR_LIST";
+const RESET_LIST = "RESET_LIST";
+const REMOVE_ITEM = "REMOVE_ITEM";
 
 const defaultState = {
   people: data,
@@ -2877,7 +2881,7 @@ const ReducerBasics = () => {
       {state.people.length < 1 ? (
         <button
           className="btn"
-          style={{ marginTop: '2rem' }}
+          style={{ marginTop: "2rem" }}
           onClick={resetList}
         >
           reset
@@ -2885,7 +2889,7 @@ const ReducerBasics = () => {
       ) : (
         <button
           className="btn"
-          style={{ marginTop: '2rem' }}
+          style={{ marginTop: "2rem" }}
           onClick={clearList}
         >
           clear
@@ -2917,7 +2921,7 @@ export default ReducerBasics;
 #### Lower State / Push The State Down
 
 ```js
-import Starter from './tutorial/11-performance/starter/01-lower-state';
+import Starter from "./tutorial/11-performance/starter/01-lower-state";
 ```
 
 When Component Re-Renders :
@@ -2929,14 +2933,14 @@ When Component Re-Renders :
 - lower state
 
 ```js
-import { useState } from 'react';
+import { useState } from "react";
 const Counter = () => {
   const [count, setCount] = useState(0);
   return (
     <button
       className="btn"
       onClick={() => setCount(count + 1)}
-      style={{ marginBottom: '1rem' }}
+      style={{ marginBottom: "1rem" }}
     >
       count {count}
     </button>
@@ -2948,25 +2952,25 @@ export default Counter;
 #### Lower State Challenge
 
 ```js
-import Starter from './tutorial/11-performance/starter/02-lower-state-challenge';
+import Starter from "./tutorial/11-performance/starter/02-lower-state-challenge";
 ```
 
 - fix the re-rendering
 - hint addPerson fix
 
 ```js
-import { useState } from 'react';
+import { useState } from "react";
 
 const Form = ({ addPerson }) => {
-  const [name, setName] = useState('');
+  const [name, setName] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!name) {
-      alert('Please Provide Name Value');
+      alert("Please Provide Name Value");
       return;
     }
     addPerson(name);
-    setName('');
+    setName("");
   };
   return (
     <form className="form" onSubmit={handleSubmit}>
@@ -2995,7 +2999,7 @@ export default Form;
 #### React.memo()
 
 ```js
-import Starter from './tutorial/11-performance/starter/03-hooks';
+import Starter from "./tutorial/11-performance/starter/03-hooks";
 ```
 
 React.memo is a higher-order component (HOC) in React that allows you to memoize a component. This means that if the input props to the component have not changed, the memoized component will return the same result from the previous render, instead of re-rendering. This can help improve performance by avoiding unnecessary render cycles.
@@ -3034,7 +3038,7 @@ By memoizing the function, you can avoid unnecessary re-renders and improve the 
 Here is an example of how you might use useCallback:
 
 ```js
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState } from "react";
 
 function MyComponent() {
   const [data, setData] = useState([]);
@@ -3055,12 +3059,12 @@ In this example, the handleClick function is memoized using useCallback and the 
 #### useCallback - Common Use Case
 
 ```js
-import Final from './tutorial/02-useEffect/final/04-fetch-data';
+import Final from "./tutorial/02-useEffect/final/04-fetch-data";
 ```
 
 ```js
-import { useState, useEffect, useCallback } from 'react';
-const url = 'https://api.github.com/users';
+import { useState, useEffect, useCallback } from "react";
+const url = "https://api.github.com/users";
 
 const FetchData = () => {
   const [users, setUsers] = useState([]);
@@ -3090,7 +3094,7 @@ By memoizing a value, you can avoid unnecessary calculations and improve the per
 Here is an example of how you might use useMemo:
 
 ```js
-import React, { useMemo } from 'react';
+import React, { useMemo } from "react";
 
 function MyComponent({ data }) {
   const processedData = useMemo(() => {
@@ -3130,15 +3134,15 @@ export default slowFunction;
 [JS Nuggets - Array.from](https://www.youtube.com/watch?v=zg1Bv4xubwo&list=PLnHJACx3NwAfRUcuKaYhZ6T5NRIpzgNGJ&index=11&t=666s)
 
 ```js
-import Starter from './tutorial/11-performance/starter/04-react-18';
+import Starter from "./tutorial/11-performance/starter/04-react-18";
 ```
 
 - useTransition is a React Hook that lets you update the state without blocking the UI.
 
 ```js
-import { useState, useTransition } from 'react';
+import { useState, useTransition } from "react";
 const LatestReact = () => {
-  const [text, setText] = useState('');
+  const [text, setText] = useState("");
   const [items, setItems] = useState([]);
   const [isPending, startTransition] = useTransition();
 
@@ -3168,13 +3172,13 @@ const LatestReact = () => {
       </form>
       <h4>Items Below</h4>
       {isPending ? (
-        'Loading...'
+        "Loading..."
       ) : (
         <div
           style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr 1fr',
-            marginTop: '2rem',
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr 1fr",
+            marginTop: "2rem",
           }}
         >
           {items}
@@ -3193,9 +3197,9 @@ The Suspense API is a feature in React that allows you to manage the loading sta
 Here is an example of how you might use the Suspense API:
 
 ```js
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense } from "react";
 
-const DataComponent = lazy(() => import('./DataComponent'));
+const DataComponent = lazy(() => import("./DataComponent"));
 
 function MyComponent() {
   return (
@@ -3207,10 +3211,10 @@ function MyComponent() {
 ```
 
 ```js
-import { useState, useTransition, lazy, Suspense } from 'react';
-const SlowComponent = lazy(() => import('./SlowComponent'));
+import { useState, useTransition, lazy, Suspense } from "react";
+const SlowComponent = lazy(() => import("./SlowComponent"));
 const LatestReact = () => {
-  const [text, setText] = useState('');
+  const [text, setText] = useState("");
   const [items, setItems] = useState([]);
   const [isPending, startTransition] = useTransition();
   const [show, setShow] = useState(false);
@@ -3240,13 +3244,13 @@ const LatestReact = () => {
       </form>
       <h4>Items Below</h4>
       {isPending ? (
-        'Loading...'
+        "Loading..."
       ) : (
         <div
           style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr 1fr',
-            marginTop: '2rem',
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr 1fr",
+            marginTop: "2rem",
           }}
         >
           {items}
@@ -3276,3 +3280,44 @@ return (
   </Suspense>
 );
 ```
+
+## Lazy loading
+
+Lazy loading in React refers to a technique used to improve the performance of your application by dynamically loading components only when they are needed, rather than loading all components upfront. This can help reduce the initial bundle size and improve the overall loading time of your application, especially for larger applications with many components.
+
+Lazy loading is typically implemented using React's React.lazy() function along with the Suspense component. Here's how you can implement lazy loading in React:
+
+```js
+// MyComponent.js
+import React from 'react';
+
+const MyComponent = () => {
+    return <div>This is my lazy-loaded component!</div>;
+};
+
+export default MyComponent;
+
+
+// App.js
+import React, { Suspense } from 'react';
+
+const LazyLoadedComponent = React.lazy(() => import('./MyComponent'));
+
+const App = () => {
+    return (
+        <div>
+            <h1>My App</h1>
+            <Suspense fallback={<div>Loading...</div>}>
+                <LazyLoadedComponent />
+            </Suspense>
+        </div>
+    );
+};
+
+export default App;
+
+```
+
+In this example, React.lazy() is used to lazily load MyComponent. The function passed to React.lazy() must return a dynamic import() call which returns a Promise for the React component. React will then automatically load the component when it's needed.
+
+The Suspense component allows you to specify a fallback UI to display while the lazy-loaded component is loading. This is useful to provide a better user experience by showing a loading indicator.

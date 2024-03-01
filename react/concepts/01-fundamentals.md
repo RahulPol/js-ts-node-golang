@@ -1,5 +1,7 @@
 # React Fundamentals
 
+## TO PRACTICE DELETE THE PRACTICE FOLDER AND START PRACTICING
+
 #### React Course
 
 [My React Course](https://www.udemy.com/course/react-tutorial-and-projects-course/?referralCode=FEE6A921AF07E2563CEF)
@@ -51,10 +53,8 @@ npm create vite@latest mixmaster -- --template react-ts <-- this for react with 
 
 #### Remove Boilerplate
 
-- remove src folder
-- create src folder
-
-  - create index.js inside src
+- remove App.tsx
+- create App.tsx
 
 - toggle sidebar CMD + B
 - shortcuts settings/keyboard shortcuts
@@ -93,14 +93,14 @@ export default Greeting;
 index.js
 
 ```js
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import ReactDOM from "react-dom/client";
 
 function Greeting() {
   return <h2>My First Component</h2>;
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(<Greeting />);
 ```
@@ -168,7 +168,7 @@ index.js
 
 ```js
 const Greeting = () => {
-  return React.createElement('h2', {}, 'hello world');
+  return React.createElement("h2", {}, "hello world");
 };
 ```
 
@@ -183,16 +183,16 @@ function Greeting() {
 
 const Greeting = () => {
   return React.createElement(
-    'div',
+    "div",
     {},
-    React.createElement('h2', {}, 'hello world')
+    React.createElement("h2", {}, "hello world")
   );
 };
 ```
 
 #### JSX Rules
 
-- return single element (one parent element)
+- MUST return single element (one parent element)
 
   - semantics section/article
   - Fragment - let's us group elements without adding extra nodes
@@ -205,7 +205,7 @@ return <React.Fragment>...rest of the return</React.Fragment>;
 return <>...rest of the return</>;
 ```
 
-- camelCase property naming convention
+- use camelCase naming convention for html property
 
 ```js
 return (
@@ -288,8 +288,8 @@ const Message = () => {
 - setup structure
 
 ```js
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import ReactDOM from "react-dom/client";
 
 function BookList() {
   return (
@@ -318,7 +318,7 @@ const Title = () => {
 };
 const Author = () => <h4>Author</h4>;
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(<BookList />);
 ```
@@ -331,8 +331,8 @@ root.render(<BookList />);
 - copy image, title and author
 
 ```js
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import ReactDOM from "react-dom/client";
 
 function BookList() {
   return (
@@ -364,9 +364,9 @@ const Image = () => (
 const Title = () => {
   return <h2>Interesting Facts For Curious Minds</h2>;
 };
-const Author = () => <h4>Jordan Moore </h4>;
+const Author = () => <h4>Jordan Moore</h4>;
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(<BookList />);
 ```
@@ -383,8 +383,8 @@ root.render(<BookList />);
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background: #f1f5f8;
   color: #222;
 }
@@ -393,7 +393,7 @@ body {
 - import file and add classes
 
 ```js
-import './index.css';
+import "./index.css";
 
 function BookList() {
   return (
@@ -456,7 +456,8 @@ const Book = () => {
 - external images (hosted on different server) - just need an url
 - local images (public folder) - less performant
 - local images (src folder) - better solution for assets,
-  since under the hood they get optimized.
+  since under the hood they get optimized. however you must import it in your component you cant use it
+  directly in the src as it is part of bundle and not hosted.
 
 - save image (Save Image As....)
 - create images folder in public
@@ -482,7 +483,7 @@ const Image = () => (
 
 ```js
 const Author = () => (
-  <h4 style={{ color: '#617d98', fontSize: '0.75rem', marginTop: '0.5rem' }}>
+  <h4 style={{ color: "#617d98", fontSize: "0.75rem", marginTop: "0.5rem" }}>
     Jordan Moore
   </h4>
 );
@@ -503,14 +504,14 @@ const Author = () => (
   so if you want to make some changes,
   reference the library docs and elements tab
 
-- alternative option
+- alternative option is to apply inline styling
 
 ```js
 const Author = () => {
   const inlineHeadingStyles = {
-    color: '#617d98',
-    fontSize: '0.75rem',
-    marginTop: '0.5rem',
+    color: "#617d98",
+    fontSize: "0.75rem",
+    marginTop: "0.5rem",
   };
   return <h4 style={inlineHeadingStyles}>Jordan Moore </h4>;
 };
@@ -579,9 +580,9 @@ const Book = () => {
 - refactor/clean up
 
 ```js
-const author = 'Jordan Moore';
-const title = 'Interesting Facts For Curious Minds';
-const img = './images/book-1.jpg';
+const author = "Jordan Moore";
+const title = "Interesting Facts For Curious Minds";
+const img = "./images/book-1.jpg";
 
 function BookList() {
   return (
@@ -608,7 +609,7 @@ const someFunc = (param1, param2) => {
   console.log(param1, param2);
 };
 // arguments
-someFunc('job', 'developer');
+someFunc("job", "developer");
 ```
 
 ```js
@@ -685,14 +686,14 @@ const Book = (props) => {
 
 ```js
 const firstBook = {
-  author: 'Jordan Moore',
-  title: 'Interesting Facts For Curious Minds',
-  img: './images/book-1.jpg',
+  author: "Jordan Moore",
+  title: "Interesting Facts For Curious Minds",
+  img: "./images/book-1.jpg",
 };
 const secondBook = {
-  author: 'James Clear',
-  title: 'Atomic Habits',
-  img: 'https://images-na.ssl-images-amazon.com/images/I/81wgcld4wxL._AC_UL900_SR900,600_.jpg',
+  author: "James Clear",
+  title: "Atomic Habits",
+  img: "https://images-na.ssl-images-amazon.com/images/I/81wgcld4wxL._AC_UL900_SR900,600_.jpg",
 };
 
 function BookList() {
@@ -737,9 +738,9 @@ const Book = (props) => {
 
 ```js
 const someObject = {
-  name: 'john',
-  job: 'developer',
-  location: 'florida',
+  name: "john",
+  job: "developer",
+  location: "florida",
 };
 
 console.log(someObject.name);
@@ -849,14 +850,14 @@ const Book = (props) => {
 ```js
 const books = [
   {
-    author: 'Jordan Moore',
-    title: 'Interesting Facts For Curious Minds',
-    img: './images/book-1.jpg',
+    author: "Jordan Moore",
+    title: "Interesting Facts For Curious Minds",
+    img: "./images/book-1.jpg",
   },
   {
-    author: 'James Clear',
-    title: 'Atomic Habits',
-    img: 'https://images-na.ssl-images-amazon.com/images/I/81wgcld4wxL._AC_UL900_SR900,600_.jpg',
+    author: "James Clear",
+    title: "Atomic Habits",
+    img: "https://images-na.ssl-images-amazon.com/images/I/81wgcld4wxL._AC_UL900_SR900,600_.jpg",
   },
 ];
 
@@ -877,12 +878,12 @@ const Book = (props) => {
 };
 ```
 
-- can't render objects in React <-- Very important point, thus line no. 885 will give an error
+- can't render objects in React <-- Very important point, thus line no. 886 will give an error
 - In React, rendering an array of elements is a common and supported operation. However, when it comes to rendering an object or an array of objects directly, React does not inherently support it because React components are designed to work with React elements, not plain JavaScript objects.
 
 ```js
 function BookList() {
-  return <section className="booklist">{books}</section>;
+  return <section className="booklist">{books}</section>; <-- this will result in error
 }
 ```
 
@@ -956,15 +957,15 @@ function BookList() {
 ```js
 const books = [
   {
-    author: 'Jordan Moore',
-    title: 'Interesting Facts For Curious Minds',
-    img: './images/book-1.jpg',
+    author: "Jordan Moore",
+    title: "Interesting Facts For Curious Minds",
+    img: "./images/book-1.jpg",
     id: 1,
   },
   {
-    author: 'James Clear',
-    title: 'Atomic Habits',
-    img: 'https://images-na.ssl-images-amazon.com/images/I/81wgcld4wxL._AC_UL900_SR900,600_.jpg',
+    author: "James Clear",
+    title: "Atomic Habits",
+    img: "https://images-na.ssl-images-amazon.com/images/I/81wgcld4wxL._AC_UL900_SR900,600_.jpg",
     id: 2,
   },
 ];
@@ -1053,16 +1054,16 @@ const Book = ({ book: { img, title, author } }) => {
 - [JS Nuggets - Spread Operator](https://www.youtube.com/watch?v=4Zyr5a3m0Fc&list=PLnHJACx3NwAfRUcuKaYhZ6T5NRIpzgNGJ&index=10)
 
 ```js
-const friends = ['john', 'peter', 'anna'];
-const newFriends = [...friends, 'susan'];
+const friends = ["john", "peter", "anna"];
+const newFriends = [...friends, "susan"];
 console.log(friends);
 console.log(newFriends);
 const someObject = {
-  name: 'john',
-  job: 'developer',
+  name: "john",
+  job: "developer",
 };
 // COPY NOT A REFERENCE !!!!
-const newObject = { ...someObject, location: 'florida' };
+const newObject = { ...someObject, location: "florida" };
 console.log(someObject);
 console.log(newObject);
 ```
@@ -1098,9 +1099,9 @@ const Book = ({ img, title, author }) => {
 - Vanilla JS
 
 ```js
-const btn = document.getElementById('btn');
+const btn = document.getElementById("btn");
 
-btn.addEventListener('click', function (e) {
+btn.addEventListener("click", function (e) {
   // access event object
   // do something when event fires
 });
@@ -1144,10 +1145,10 @@ function BookList() {
 
 const EventExamples = () => {
   const handleFormInput = () => {
-    console.log('handle form input');
+    console.log("handle form input");
   };
   const handleButtonClick = () => {
-    alert('handle button click');
+    alert("handle button click");
   };
   return (
     <section>
@@ -1157,7 +1158,7 @@ const EventExamples = () => {
           type="text"
           name="example"
           onChange={handleFormInput}
-          style={{ margin: '1rem 0' }}
+          style={{ margin: "1rem 0" }}
         />
       </form>
       <button onClick={handleButtonClick}>click me</button>
@@ -1222,7 +1223,7 @@ const EventExamples = () => {
 const EventExamples = () => {
   return (
     <section>
-      <button onClick={() => console.log('hello there')}>click me</button>
+      <button onClick={() => console.log("hello there")}>click me</button>
     </section>
   );
 };
@@ -1240,10 +1241,10 @@ const EventExamples = () => {
           type="text"
           name="example"
           onChange={(e) => console.log(e.target.value)}
-          style={{ margin: '1rem 0' }}
+          style={{ margin: "1rem 0" }}
         />
       </form>
-      <button onClick={() => console.log('you clicked me')}>click me</button>
+      <button onClick={() => console.log("you clicked me")}>click me</button>
     </section>
   );
 };
@@ -1293,7 +1294,7 @@ const Book = (props) => {
 
 ```js
 function BookList() {
-  const someValue = 'shakeAndBake';
+  const someValue = "shakeAndBake";
   const displayValue = () => {
     console.log(someValue);
   };
@@ -1384,7 +1385,7 @@ const Book = (props) => {
 };
 ```
 
-- two fixes
+- common solution
 - second option - wrap in the anonymous arrow function
 
 ```js
@@ -1444,15 +1445,15 @@ books.js
 ```js
 const books = [
   {
-    author: 'Jordan Moore',
-    title: 'Interesting Facts For Curious Minds',
-    img: './images/book-1.jpg',
+    author: "Jordan Moore",
+    title: "Interesting Facts For Curious Minds",
+    img: "./images/book-1.jpg",
     id: 1,
   },
   {
-    author: 'James Clear',
-    title: 'Atomic Habits',
-    img: 'https://images-na.ssl-images-amazon.com/images/I/81wgcld4wxL._AC_UL900_SR900,600_.jpg',
+    author: "James Clear",
+    title: "Atomic Habits",
+    img: "https://images-na.ssl-images-amazon.com/images/I/81wgcld4wxL._AC_UL900_SR900,600_.jpg",
     id: 2,
   },
 ];
@@ -1468,15 +1469,15 @@ const books = [
 ```js
 export const books = [
   {
-    author: 'Jordan Moore',
-    title: 'Interesting Facts For Curious Minds',
-    img: './images/book-1.jpg',
+    author: "Jordan Moore",
+    title: "Interesting Facts For Curious Minds",
+    img: "./images/book-1.jpg",
     id: 1,
   },
   {
-    author: 'James Clear',
-    title: 'Atomic Habits',
-    img: 'https://images-na.ssl-images-amazon.com/images/I/81wgcld4wxL._AC_UL900_SR900,600_.jpg',
+    author: "James Clear",
+    title: "Atomic Habits",
+    img: "https://images-na.ssl-images-amazon.com/images/I/81wgcld4wxL._AC_UL900_SR900,600_.jpg",
     id: 2,
   },
 ];
@@ -1485,7 +1486,7 @@ export const books = [
 index.js
 
 ```js
-import { books } from './books';
+import { books } from "./books";
 ```
 
 - default export
@@ -1510,7 +1511,7 @@ export default Book;
 index.js
 
 ```js
-import Book from './Book';
+import Book from "./Book";
 ```
 
 #### Local Images (src folder)
@@ -1527,26 +1528,26 @@ import Book from './Book';
     it is part of your bundle and not hosted instead downloaded on browser. Thus you need to provide import statement same as other js/ts files in src folder.
 
 ```js
-import img1 from './images/book-1.jpg';
-import img2 from './images/book-2.jpg';
-import img3 from './images/book-3.jpg';
+import img1 from "./images/book-1.jpg";
+import img2 from "./images/book-2.jpg";
+import img3 from "./images/book-3.jpg";
 
 export const books = [
   {
-    author: 'Jordan Moore',
-    title: 'Interesting Facts For Curious Minds',
+    author: "Jordan Moore",
+    title: "Interesting Facts For Curious Minds",
     img: img1,
     id: 1,
   },
   {
-    author: 'James Clear',
-    title: 'Atomic Habits',
+    author: "James Clear",
+    title: "Atomic Habits",
     img: img2,
     id: 2,
   },
   {
-    author: 'Stephen King',
-    title: 'Fairy Tale',
+    author: "Stephen King",
+    title: "Fairy Tale",
     img: img3,
     id: 3,
   },
@@ -1668,22 +1669,22 @@ public/index.html
 - index.js
 
 ```js
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import ReactDOM from "react-dom/client";
 
 // styles (typically global)
-import './index.css';
+import "./index.css";
 
 // convention to name it App and setup in a separate file
-import App from './App';
+import App from "./App";
 // import report web vitals
-import reportWebVitals from './reportWebVitals';
+import reportWebVitals from "./reportWebVitals";
 
 // StrictMode
 
 // StrictMode is a tool for highlighting potential problems in an application.Activates additional checks and warnings for its descendants.Runs only in Development, does not impact the production build. RENDERS TWICE !!! Possible to remove.
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <App />

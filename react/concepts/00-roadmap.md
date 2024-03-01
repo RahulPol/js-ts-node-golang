@@ -1,0 +1,75 @@
+### There are four branches
+
+1. Fundamentals
+   - Vite
+   - Function components
+   - JSX
+   - Import and Export components
+   - React fragments
+   - Styling components
+   - Props
+   - State
+   - useState hook
+   - Conditional rendering
+   - List and keys
+   - Event handling
+   - Form handling
+   - Composition vs Inheritance
+   - Component lifecycle
+   - useEffect hook
+2. Advanced Topics
+   - Http requests
+     - GET
+     - POST
+     - PUT / PATCH
+     - DELETE
+   - Context
+     - createContext
+     - useContext
+   - Refs
+     - useRef
+     - forwardRef
+   - Hooks
+     - useReducer
+     - use
+     - useOptimistic
+     - customHooks
+   - Error boundaries
+   - Portals
+   - Built-in Components
+     - Profiler
+     - StrictMode
+     - Suspense
+   - Performance
+     - useMemo
+     - useCallback
+     - useTransition
+     - memo
+     - lazy
+     - startTransition
+   - React Server Components
+     - cache
+     - useFormState
+     - useFormStatus
+3. Ecosystem
+   - State Management
+     - Redux toolkit
+     - Zustland
+   - Routing
+     - React Router
+   - Styling
+     - Styled Components
+     - Tailwind css
+   - Forms
+     - React hook forms
+   - Testing
+     - ViTest + RTL
+     - Cypress
+   - Misc
+     - Typescript
+     - Storybook
+     - React i18Next
+     - Firebase / Supabase
+   - Next Steps
+     - Next JS
+     - React Native
