@@ -4,18 +4,24 @@
     /Design patterns
 3. Node js interview questions
     https://www.simplilearn.com/tutorials/nodejs-tutorial/nodejs-interview-questions
-3. React interview Questions
+4. React interview Questions
     https://github.com/sudheerj/reactjs-interview-questions
     https://www.interviewbit.com/react-interview-questions/
-4. javascript interview questions 
+5. javascript interview questions 
     https://github.com/sudheerj/javascript-interview-questions?tab=readme-ov-file#table-of-contents
-3. Node js / Javascript Security
+6. Node js / Javascript Security
     https://cheatsheetseries.owasp.org/cheatsheets/Nodejs_Security_Cheat_Sheet.html
     https://infosec.mozilla.org/guidelines/web_security.html#web-security-cheat-sheet
+7. MongoDB interview questions  
+    https://mindmajix.com/mongodb-interview-questions
+    https://www.interviewbit.com/mongodb-interview-questions/
+8. Microservices interview Questions    
+    https://docs.google.com/document/d/1azXsr0bAFMl4lxidU9l8nZv24mFtNt5-7GcPtrSOv-4/edit
 
 
 Miscellaneous
 - check the jest + RTL in last project
+- check ACID and CAP theorem
 - check how OAuth works in express
 - event loop in javascript and node js
 - multithreading in javascript and node js 
