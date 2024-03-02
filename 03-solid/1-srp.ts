@@ -66,7 +66,7 @@ class Journal {
 }
 
 // The SRP ensures that we follow Separation of concerns, which means different concerns or different problems of the system have to reside in different constructs (structure, package, module..).
-// Separation fo concerns avoids anti pattern, i.e. God Object - which means putting everything into single construct(class, package, module..)
+// Separation of concerns avoids anti pattern, i.e. God Object - which means putting everything into single construct(class, package, module..)
 
 // Now it seems saving journal on disk is it's own responsibility but think about it, you can have other types books, epics,
 // manuscripts which also needs to be persisted which means the persistance is a cross cutting concern and requires same logic for different types

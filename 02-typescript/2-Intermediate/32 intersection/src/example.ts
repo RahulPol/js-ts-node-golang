@@ -1,2 +1,9 @@
+type Point2D = {
+  x: number;
+  y: number;
+  z: number;
+};
 
-declare function someBooleanOrNullOrUndefined(): boolean | null | undefined;
+type Point3D = Point2D & {
+  z: number;
+};

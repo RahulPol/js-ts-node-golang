@@ -1,3 +1,9 @@
+type CardinalDirection = "North" | "East" | "South" | "West";
+let direction: CardinalDirection;
+
+direction = "North";
+direction = "N0rth";
+
 type DiceValue = 1 | 2 | 3 | 4 | 5 | 6;
 
 function rollDice() {
@@ -5,5 +11,5 @@ function rollDice() {
 }
 
 if (rollDice() === 7) {
-  throw new Error('Not possible!');
+  throw new Error("Not possible!");
 }
