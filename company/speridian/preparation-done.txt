@@ -19,11 +19,13 @@
     https://docs.google.com/document/d/1azXsr0bAFMl4lxidU9l8nZv24mFtNt5-7GcPtrSOv-4/edit
 
 
-Miscellaneous
+Miscellaneous//////.,n/nlkhjkhvu
 - check the jest + RTL in last project
 - check ACID and CAP theorem
 - check how OAuth works in express
 - event loop in javascript and node js
+    - https://javascript.info/event-loop <-- JS event loop
+    - https://www.youtube.com/playlist?list=PLC3y8-rFHvwj1_l8acs_lBi3a0HNb3bAN <-- Node js event loop
 - multithreading in javascript and node js 
 - read microservices interview questions 
 - go through code of leanpos to check azure event hub

@@ -1,3 +1,7 @@
+// TO RUN THE CODE, use npm run build
+// it will generate js files in the out directory
+// use node command to run the js file
+
 // TO use import statement in javascript you must specify
 // "type": "module"
 // in package.json

@@ -1,18 +1,20 @@
 type Square = {
-  size: number,
+  size: number;
 };
 type Rectangle = {
-  width: number,
-  height: number,
+  width: number;
+  height: number;
 };
 type Shape = Square | Rectangle;
 
+// isSquare is user defined type guard
+// instead of checking 'size' in shape we do it outside and return it through is operator
 function isSquare(shape: Shape): shape is Square {
-	return 'size' in shape;
+  return "size" in shape;
 }
 
 function isRectangle(shape: Shape): shape is Rectangle {
-	return 'width' in shape;
+  return "width" in shape;
 }
 
 function area(shape: Shape) {

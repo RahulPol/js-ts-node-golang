@@ -1,19 +1,14 @@
-type NameFields = { firstName: string, lastName: string };
+let suffix: null | string = getSuffix();
 
-function addFullName<T extends NameFields>(obj: T): T & { fullName: string } {
-  return {
-    ...obj,
-    fullName: `${obj.firstName} ${obj.lastName}`,
-  };
+if (suffix != null) {
+  let exampleOne = "jane" + suffix.toUpperCase();
+
+  ["john", "jane"].forEach((value) => value + suffix.toUpperCase());
 }
 
-const john = addFullName({
-  email: 'john@example.com',
-  firstName: 'John',
-  lastName: 'Doe'
-});
-
-console.log(john.email); // john@example.com
-console.log(john.fullName); // John Doe
-
-const jane = addFullName({ firstName: 'Jane', lastName: 'Austen' });
+let example: string | null = forEaxample();
+if (example != null) {
+  const exampleLocal = example;
+  setTimeout(() => exampleLocal.toUpperCase, 0);
+}
+example = null;

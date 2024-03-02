@@ -10,3 +10,5 @@ function makeDate(timestampOrYear: number, month?: number, day?: number): Date {
 
 const doomsday = makeDate(2000, 1, 1); // 1 Jan 2000
 const epoch = makeDate(0); // 1 Jun 1970
+
+const invalid = makeDate(2000, 1 /* Error  */);
