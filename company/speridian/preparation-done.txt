@@ -19,9 +19,13 @@
     https://docs.google.com/document/d/1azXsr0bAFMl4lxidU9l8nZv24mFtNt5-7GcPtrSOv-4/edit
 
 
-Miscellaneous//////.,n/nlkhjkhvu
+Miscellaneous
 - check the jest + RTL in last project
 - check ACID and CAP theorem
+- Express guide
+    - https://www.youtube.com/watch?v=TJJbaxjiaJc&list=PLYvdvJlnTOjFZtADcZtoyUiSqsQThy4CH&index=3
+- JWT Token 
+    - https://www.youtube.com/watch?v=QchYEZv3ysA&list=PLYvdvJlnTOjFZtADcZtoyUiSqsQThy4CH&index=1
 - check how OAuth works in express
 - event loop in javascript and node js
     - https://javascript.info/event-loop <-- JS event loop
