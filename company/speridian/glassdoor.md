@@ -320,6 +320,21 @@ Applied through Naukri, successfully shortlisted, received a call, and scheduled
 Interview Questions
 How can a variable be defined in the `package.json` file and subsequently utilized within that same file?
 Answer Question
+Linux/Mac: $npm_package_name or ${npm_package_name}
+
+Windows: %npm_package_name%
+
+{
+"name": "myapp",
+"config": {
+"port": "3000"
+},
+"scripts": {
+"start": "node app.js $npm_package_config_port"
+"start-harmony": "node --harmony app.js $npm_package_config_port"
+},
+...
+}
 
 ---
 
