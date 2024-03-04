@@ -25,6 +25,18 @@
 // on a particular condition. The consumer of the factory is totally agnostic about how
 // the creation of the instance is carried out.
 
+function ImageJpeg(name: string) {
+  // jpeg image
+}
+
+function ImageGif(name: string) {
+  // gif image
+}
+
+function ImagePng(name: string) {
+  // png image
+}
+
 // Simple factory
 function createImage(name) {
   if (name.match(/\.jpe?g$/)) {
@@ -40,9 +52,9 @@ function createImage(name) {
 
 // Factory to enforce encapsulation
 function createPerson(name) {
-  const privateProperties = {};
+  let privateProperties: { name: string };
   const person = {
-    setName(name) {
+    setName(name: string) {
       if (!name) {
         throw new Error("A person must have a name");
       }
