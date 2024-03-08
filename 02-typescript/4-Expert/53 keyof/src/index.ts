@@ -1,20 +1,28 @@
 type Person = {
-  name: string,
-  age: number,
-  location: string,
+  name: string;
+  age: number;
+  location: string;
 };
 
 const john: Person = {
-  name: 'John',
+  name: "John",
   age: 35,
-  location: 'Melbourne',
+  location: "Melbourne",
 };
 
 function logGet<Obj, Key extends keyof Obj>(obj: Obj, key: Key) {
   const value = obj[key];
-  console.log('Getting:', key, value);
+  console.log("Getting:", key, value);
   return value;
 }
 
-const age = logGet(john, 'age'); // 35
-console.log(logGet(john, 'email')); // Error
+const age = logGet(john, "age"); // 35
+console.log(logGet(john, "email")); // Error
+
+function logSet<T, Key extends keyof T>(obj: T, key: Key, value: T[Key]) {
+  console.log("Setting:", key, value);
+  obj[key] = value;
+}
+
+logSet(john, "age", 35);
+logSet(john, "age", "35"); // Error
