@@ -37,3 +37,9 @@ app.use(function (req, res, next) {
 ```
 
 It should be noted that attackers can change the `Content-Type` header of the request and bypass request size limits. Therefore, before processing the request, data contained in the request should be validated against the content type stated in the request headers. If content type validation for each request affects the performance severely, you can only validate specific content types or request larger than a predetermined size.
+
+You can accomplish this very easily with express middleware as follows:
+
+`app.use(express.urlencoded({ extended: true, limit: "1kb" }));`
+
+`app.use(express.json({ limit: "1kb" }));`
