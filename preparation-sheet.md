@@ -42,6 +42,7 @@ Miscellaneous
 
 - check the jest + RTL in last project
 - check ACID and CAP theorem
+- Isolation levels in database
 - Express guide
   - https://www.youtube.com/watch?v=TJJbaxjiaJc&list=PLYvdvJlnTOjFZtADcZtoyUiSqsQThy4CH&index=3
 - JWT Token
