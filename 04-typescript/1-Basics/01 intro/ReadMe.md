@@ -13,7 +13,7 @@ Now the specific version of NodeJS that I have displayed over here is actually n
 the features that we will be using throughout this course are not actually version specific.
 Now, the NodeJS installation also installs two additional executables and we will be using them throughout
 this course so we can verify that they are working correctly as well by running NPM space minus minus
-version and similarly NP space minus minus version.
+version and similarly NPM space minus minus version.
 And that's it for NodeJS installation.
 Now let's go ahead and use NodeJS to create our first TypeScript project.
 We open up a new terminal session, create a new directory specific to our project, and then use the
@@ -21,16 +21,16 @@ NPM init command to create a new NodeJS package.
 We additionally pass in the command line flag minus Y to select the default options.
 NodeJS packages are the standard way to do front end as well as back end software development with JavaScript.
 Now, because we are using TypeScript, we will additionally install TypeScript by running the command
-NPM TypeScript.
+`npm i typescript`
 This will install the TypeScript compiler TSC into this particular package.
-We can run the version of TSC that comes bundled with TypeScript within this package by using Npx TSC
+We can run the version of TSC that comes bundled with TypeScript within this package by using `npx tsc --init --rootDir src --outDir lib`
 and then for command line flags for TSC, we pass in minus minus init to initialize a new tsconfig.
 A tsconfig.json file is used to store TypeScript configuration options.
 Now for our initial options we use minus minus root dir to specify that all our source code will be
 located in the SRC folder and then a minus minus out dir lib to indicate that our output JavaScript
 code should be generated into the lib folder.
 Now, once this command executes, it notifies us that it's created a tsconfig.json file.
-Now before we start writing TypeScript code, let's talk about ides.
+Now before we start writing TypeScript code, let's talk about IDEs.
 Now my recommended IDE for starting web development is vs code.
 Visual Studio code is by Microsoft, the creators of TypeScript and it is available for free for Windows
 as well as Mac and Linux.
@@ -46,7 +46,7 @@ Now TypeScript cannot be executed by NodeJS or the browsers by itself.
 The first step is to actually take the TypeScript source code and compile it to JavaScript that NodeJS
 and browsers can execute.
 Now, in order to compile the TypeScript files into JavaScript files, we open up the terminal and execute
-Npx TSC and we will start the TypeScript compiler in watch mode with minus minus watch.
+`npx tsc` and we will start the TypeScript compiler in watch mode with minus minus watch.
 This means that if you make any modifications to our source code, it will recompile them on the fly.
 Now on its initial compile, it's already generated the output JavaScript into the lib folder.
 So for our source index.ts file, TypeScript has gone ahead and generated lib Index.js file.
