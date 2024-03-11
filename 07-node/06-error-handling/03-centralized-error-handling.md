@@ -54,7 +54,7 @@ class ErrorHandler {
 export const errorHandler = new ErrorHandler();
 ```
 
-Up to this point, we mostly discussed dealing with operational errors. How about programmer errors? The best way to deal with these errors is to crash immediately and restart gracefully with an automatic restarter like PM2—the reason being that programmer errors are unexpected, as they are actual bugs that might cause the application to end up in a wrong state and behave in an unexpected way.
+Up to this point, we mostly discussed dealing with operational errors. How about programmer errors? The best way to deal with these errors is to crash immediately and restart gracefully with an automatic restart like PM2—the reason being that programmer errors are unexpected, as they are actual bugs that might cause the application to end up in a wrong state and behave in an unexpected way.
 
 ```ts
 process.on("uncaughtException", (error: Error) => {

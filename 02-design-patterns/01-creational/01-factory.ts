@@ -1,8 +1,3 @@
-// In some cases, the traditional implementation of these design patterns is not even
-// possible because JavaScript, as we know, doesn't have real classes or abstract
-// interfaces. What doesn't change, though, is the original idea at the base of each
-// pattern, the problem it solves, and the concepts at the heart of the solution.
-
 // In this chapter and in the following, we will see how some of the most
 // important GoF design patterns apply to Node.js and its philosophy, thus
 // rediscovering their importance from another perspective. Among these traditional

@@ -75,7 +75,7 @@ class Journal {
 // Now it seems saving journal on disk is it's own responsibility but think about it, you can have other types books, epics,
 // manuscripts which also needs to be persisted which means the persistance is a cross cutting concern and requires same logic for different types
 // thus it would be a good idea to separate this into another construct  and other types can utilize the same logic, which adheres to DRY principle.
-// Here, we are creating it as a simple struct but it should be a separate package. Thus, any type(in our case Journal, book, etc) that implements
+// Here, we are creating it as a simple separate class but it should be a separate module. Thus, any type(in our case Journal, book, etc) that implements
 // Printable interface can be persisted on disk
 
 interface Printable {

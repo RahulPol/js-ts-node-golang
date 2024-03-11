@@ -8,7 +8,7 @@
 // Database class, which provides access to a database:
 
 // 'Database.js'
-export class Database {
+class Database {
   constructor(dbName, connectionDetails) {
     // ...
   }

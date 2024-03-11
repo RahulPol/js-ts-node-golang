@@ -63,7 +63,7 @@
 
 // 1 <= functions.length <= 10
 
-// THIS IS CUSTOM IMPLEMENTATION FOR Promse.allSettled
+// THIS IS CUSTOM IMPLEMENTATION FOR Promise.allSettled
 function customAllSettled(fnArray) {
   const response = [];
   let count = 0;

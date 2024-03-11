@@ -3,6 +3,9 @@
 // Instead of modifying existing code to add new features, the principle suggests extending the code through inheritance, interfaces, or other mechanisms.
 // This allows you to add new functionality without changing the existing codebase, reducing the risk of introducing bugs.
 
+// Consider you are working on car rental platform and asked to implement discount feature for the application. Thus when providing car price you also need
+// to implement logic to incorporate discount and then provide final price, there is only one discount type available per car type
+
 enum CarType {
   Sedan,
   SUV,
