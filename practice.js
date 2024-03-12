@@ -1,5 +1,13 @@
-console.log(parseInt("23534"));
+const userURL = "http://localhost:5000";
 
-class test{
-    readonly b = 10;
+async function fetchUser(id) {
+  try {
+    const response = await fetch(url + `?id=${id}`);
+    if (!response.ok) {
+      return Promise.reject("error while fetching user");
+    }
+    return response.json();
+  } catch (e) {
+    return Promise.reject("error while fetching user");
+  }
 }

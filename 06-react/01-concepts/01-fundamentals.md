@@ -500,8 +500,7 @@ const Author = () => (
 }
 ```
 
-- external libraries use inline css,
-  so if you want to make some changes,
+- external libraries use inline css, so if you want to make some changes,
   reference the library docs and elements tab
 
 - alternative option is to apply inline styling
