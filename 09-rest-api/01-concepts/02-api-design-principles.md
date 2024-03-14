@@ -76,6 +76,19 @@ Let's check one by one
 
       Server errors: 500–599
 
+      Most common status codes
+
+      - **200 OK**
+      - **301 Moved Permanently**
+      - **302 Found (Moved Temporarily)**
+      - **304 Not Modified**
+      - **400 Bad Request**
+      - **401 Unauthorized**
+      - **403 Forbidden**
+      - **404 Not Found**
+      - **429 Too many requests**
+      - **500 Internal Server Error**
+
     - **Define a proper response body**
 
       Resources in the body should have proper metadata, and should be wrapped according to the path. For JSON keys having multiple words, use either hyphens (-), underscores (\_) or camelCase. Use any one and use it consistently in all the responses.

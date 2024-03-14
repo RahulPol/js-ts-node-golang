@@ -4,6 +4,8 @@ REST is an acronym for **RE**presentational **S**tate **T**ransfer and an archit
 
 REST is not a protocol or a standard, it is an architectural style. Like the other architectural styles, REST also has its guiding principles and constraints. These principles must be satisfied if a service interface has to be referred to as RESTful.
 
+Before we get to the principles, lets first understand some basic concepts of Rest.
+
 ### What is Resource?
 
 The key abstraction of information in REST is a resource. Any information that we can name can be a resource. For example, a REST resource can be a document or image, a temporal service, a collection of other resources, or a non-virtual object (e.g., a person).

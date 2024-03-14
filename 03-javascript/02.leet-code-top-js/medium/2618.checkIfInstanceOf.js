@@ -47,7 +47,7 @@ var checkIfInstanceOf = function (obj, classFunction) {
     if (obj.constructor === classFunction) {
       return true;
     }
-    // obj = Object.getPrototypeOf(obj); OR obj = obj["__proto__"];
+    obj = Object.getPrototypeOf(obj); // OR obj = obj["__proto__"];
   }
   return false;
 };

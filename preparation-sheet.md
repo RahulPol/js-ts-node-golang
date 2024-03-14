@@ -50,8 +50,9 @@ Miscellaneous
 - event loop in javascript and node js
   - https://javascript.info/event-loop <-- JS event loop
   - https://www.youtube.com/playlist?list=PLC3y8-rFHvwj1_l8acs_lBi3a0HNb3bAN <-- Node js event loop
+- kubernetes in simple terms
+  - https://www.youtube.com/watch?v=TlHvYWVUZyc
 - multithreading in javascript and node js
-- read microservices interview questions
 - go through code of leanpos to check azure event hub
 
 CHECK YOUR RESUME BEFORE INTERVIEW
