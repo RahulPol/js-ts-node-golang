@@ -27,8 +27,8 @@
    - [Express JWT](https://www.youtube.com/watch?v=QchYEZv3ysA&list=PLYvdvJlnTOjFZtADcZtoyUiSqsQThy4CH&index=1)
    - [Express Pagination](./08-express/pagination/)
 9. Rest API
-   - [Rest API Concepts](./10-rest-api/01-concepts/)
-   - [Rest API Security](./10-rest-api/02-rest-api-security/)
+   - [Rest API Concepts](./09-rest-api/01-concepts/)
+   - [Rest API Security](./09-rest-api/02-rest-api-security/)
 10. Microservices
     - [Microservice through QnA](https://docs.google.com/document/d/1azXsr0bAFMl4lxidU9l8nZv24mFtNt5-7GcPtrSOv-4/edit)
 11. Database interview questions
@@ -47,6 +47,9 @@ Miscellaneous
   - https://www.youtube.com/watch?v=TJJbaxjiaJc&list=PLYvdvJlnTOjFZtADcZtoyUiSqsQThy4CH&index=3
 - JWT Token
 - check how OAuth works in express
+- Rest vs GraphQL
+  - https://aws.amazon.com/compare/the-difference-between-graphql-and-rest/#:~:text=REST%20is%20a%20set%20of,to%20create%20and%20manipulate%20APIs.&text=REST%20is%20good%20for%20simple%20data%20sources%20where%20resources%20are%20well%20defined.
+  - https://www.youtube.com/watch?v=yWzKJPw_VzM&ab_channel=ByteByteGo
 - event loop in javascript and node js
   - https://javascript.info/event-loop <-- JS event loop
   - https://www.youtube.com/playlist?list=PLC3y8-rFHvwj1_l8acs_lBi3a0HNb3bAN <-- Node js event loop

@@ -65,3 +65,7 @@ REST also allows client functionality to extend by downloading and executing cod
 The downloaded code simplifies clients by reducing the number of features required to be pre-implemented. Servers can provide part of features delivered to the client in the form of code, and the client only needs to execute the code.
 
 Source: https://restfulapi.net/
+
+### Another good resource
+
+https://www.youtube.com/watch?v=1Wl-rtew1_E&ab_channel=High-PerformanceProgramming
