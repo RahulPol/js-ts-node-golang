@@ -4,7 +4,7 @@ var expect = function (val) {
   };
 
   const notToBe = (arg) => {
-    return arg !== val ? true : new Error("Not Equal");
+    return arg !== val ? true : new Error("Equal");
   };
 
   return { toBe, notToBe };

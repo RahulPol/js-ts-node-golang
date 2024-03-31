@@ -85,6 +85,10 @@ class CarTypeDiscount implements IDiscount {
 class CarWithOCP {
   carType: CarType;
   price: number;
+  // here the discounts are injected in the car type
+  // instead we can have separate discounts type where we can
+  // add/remove discounts and then loop over those discounts
+  // in that case the price method in car type will accept discounts as argument.
   discounts: IDiscount[];
 
   constructor(carType: CarType, price: number, discounts: IDiscount[]) {

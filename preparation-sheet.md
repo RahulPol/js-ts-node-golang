@@ -16,8 +16,9 @@
    - [Leet Code top 150](./05-datastructures/03-leet-code-top-150/)
 6. React
    - [React Concepts](./06-react/01-concepts/)
+   - [Redux Toolkit](https://www.youtube.com/watch?v=5yEG6GhoJBs&ab_channel=CosdenSolutions)
    - [React Interview Questions - set 1](https://github.com/sudheerj/reactjs-interview-questions)
-   - [React Interview Questions - set 2](https://www.interviewbit.com/react-interview-questions/)
+   - [React Interview Questions - sew t 2](https://www.interviewbit.com/react-interview-questions/)
 7. Node js
    - [Node Concepts](./07-node/)
    - [Node Interview Questions](https://www.simplilearn.com/tutorials/nodejs-tutorial/nodejs-interview-questions)
@@ -46,6 +47,8 @@ Miscellaneous
 - Express guide
   - https://www.youtube.com/watch?v=TJJbaxjiaJc&list=PLYvdvJlnTOjFZtADcZtoyUiSqsQThy4CH&index=3
 - JWT Token
+- Improve website perfromance
+  - https://sematext.com/blog/improve-website-performance/
 - check how OAuth works in express
 - Rest vs GraphQL
   - https://aws.amazon.com/compare/the-difference-between-graphql-and-rest/#:~:text=REST%20is%20a%20set%20of,to%20create%20and%20manipulate%20APIs.&text=REST%20is%20good%20for%20simple%20data%20sources%20where%20resources%20are%20well%20defined.

@@ -404,8 +404,8 @@ const handleClick = () => {
 ```js
 const handleClick = () => {
   // setTimeout(() => {
-  // console.log('clicked the button', count); // count will always be 0.
   //   setValue(value + 1);
+  // console.log('clicked the button', count); // count will always be value and not the updated value as the setValue will take effect in next render cycle.
   // }, 3000);
   setTimeout(() => {
     console.log("clicked the button");
@@ -505,6 +505,7 @@ const UseEffectBasics = () => {
 
   sayHello();
 
+  // this will run on initial load as well as all rerenders.
   // useEffect(() => {
   //   console.log('hello from useEffect');
   // });
@@ -1991,8 +1992,8 @@ const UncontrolledInputs = () => {
     const newUser = Object.fromEntries(formData);
     // do something (post request, add to list, etc)
     console.log(newUser);
-    // Gotcha - re-render won't clear out the values
     setValue(value + 1);
+    // Gotcha - re-render won't clear out the values
     // reset values
     e.currentTarget.reset();
   };

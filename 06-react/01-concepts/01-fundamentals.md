@@ -877,7 +877,7 @@ const Book = (props) => {
 };
 ```
 
-- can't render objects in React <-- Very important point, thus line no. 886 will give an error
+- can't render objects in React <-- Very important point, thus line no. 885 will give an error
 - In React, rendering an array of elements is a common and supported operation. However, when it comes to rendering an object or an array of objects directly, React does not inherently support it because React components are designed to work with React elements, not plain JavaScript objects.
 
 ```js
