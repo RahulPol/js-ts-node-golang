@@ -1,19 +1,14 @@
-// const userURL = "http://localhost:5000";
+function aClean(arr) {
+  const map = new Map();
 
-// async function fetchUser(id) {
-//   try {
-//     const response = await fetch(url + `?id=${id}`);
-//     if (!response.ok) {
-//       return Promise.reject("error while fetching user");
-//     }
-//     return response.json();
-//   } catch (e) {
-//     return Promise.reject("error while fetching user");
-//   }
-// }
+  for (const word of arr) {
+    const key = word.toLowerCase().split("").sort().join("");
+    map.set(key, word);
+  }
 
-const arr = [1, 2];
-const arr3 = [5, 9, [8]];
-const arr2 = arr.concat(3, arr3);
+  return Array.from(map.values());
+}
 
-console.log(arr2);
+let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+
+console.log(aClean(arr)); // "nap,teachers,ear" or "PAN,cheaters,era"

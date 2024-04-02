@@ -90,3 +90,30 @@ var flatV2 = function (arr, n) {
 console.log(
   flatV2([1, 2, 3, [4, 5, 6], [7, 8, [9, 10, 11], 12], [13, 14, 15]], 2)
 );
+
+// following works
+function flatArray(arr, n) {
+  let result = [];
+
+  function flat(arr, n) {
+    if (n == -1) {
+      result.push(arr);
+      return;
+    }
+    for (const item of arr) {
+      if (Array.isArray(item)) {
+        flat(item, n - 1);
+      } else {
+        result.push(item);
+      }
+    }
+  }
+
+  flat(arr, n);
+
+  return result;
+}
+
+console.log(
+  flatArray([1, 2, 3, [4, 5, 6], [7, 8, [9, 10, 11], 12], [13, 14, 15]], 1)
+);

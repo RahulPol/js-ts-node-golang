@@ -46,8 +46,8 @@ var ArrayWrapper = function (nums) {
 /**
  * @return {number}
  */
-// Basically whenever + operator is called on an object, its valueOf mehtod is invoked.
-// The default valueOf method provides comma separted values for array, thus override the default mehtod
+// Basically whenever + operator is called on an object, its valueOf method is invoked.
+// The default valueOf method provides comma separated values for array, thus override the default method
 ArrayWrapper.prototype.valueOf = function () {
   // uncomment following line to understand details
   //console.log(`i am here with `, this, this.nums);

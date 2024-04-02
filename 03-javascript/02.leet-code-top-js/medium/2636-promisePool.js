@@ -1,5 +1,5 @@
 // Description
-// Given an array of asyncronous functions `functions` and a pool limit n, return an asyncronous function promisePool. It should return a promise that resolves when all the input functions resolve.
+// Given an array of asynchronous functions `functions` and a pool limit n, return an asynchronous function promisePool. It should return a promise that resolves when all the input functions resolve.
 
 // Pool limit is defined as the maximum number promises that can be pending at once. promisePool should begin execution of as many functions as possible and continue executing new functions when old promises resolve. promisePool should execute functions[i] then functions[i + 1] then functions[i + 2], etc. When the last promise resolves, promisePool should also resolve.
 
@@ -185,18 +185,18 @@ function promisePool(fnArray, limit) {
 
 function promisePoolV3(functions, n) {
   let inProgressCount = 0;
-  let functionInex = 0;
+  let functionIndex = 0;
   return new Promise((resolve) => {
     function helper() {
-      if (functionInex >= functions.length) {
+      if (functionIndex >= functions.length) {
         if (inProgressCount == 0) resolve();
         return;
       }
 
-      while (inProgressCount < n && functionInex < functions.length) {
+      while (inProgressCount < n && functionIndex < functions.length) {
         inProgressCount++;
-        const promise = functions[functionInex]();
-        functionInex++;
+        const promise = functions[functionIndex]();
+        functionIndex++;
         promise.then(() => {
           inProgressCount--;
           helper();

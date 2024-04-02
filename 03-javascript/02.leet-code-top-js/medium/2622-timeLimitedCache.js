@@ -116,7 +116,7 @@
 // console.log(timeLimitedCache.count()) // 1
 // setTimeout(() => {console.log(timeLimitedCache.count()) }, 3000) // 0
 
-// SOLUTION: fast
+// SOLUTION: fast / sophisticated
 var TimeLimitedCache = function () {
   this.cache = {};
   this.activeKeysCounter = 0;

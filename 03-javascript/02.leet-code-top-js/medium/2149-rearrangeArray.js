@@ -35,18 +35,19 @@
 
 // It is not required to do the modifications in-place.
 
-var rearrangeArray = function (nums) {
-  const allPositives = nums.filter((num) => num >= 0);
-  const allNegatives = nums.filter((num) => num < 0);
+function rearrangeArray(arr) {
   const result = [];
+  const allPositives = arr.filter((val) => val >= 0);
+  const allNegatives = arr.filter((val) => val < 0);
 
-  for (let i = 0; i < nums.length; i++) {
-    if (i % 2 == 0) {
-      result.push(allPositives[i / 2]);
-    } else {
-      result.push(allNegatives[Math.floor(i / 2)]);
-    }
+  for (let i = 0; i < arr.length / 2; i++) {
+    result.push(allPositives[i]);
+    result.push(allNegatives[i]);
   }
 
   return result;
-};
+}
+
+const nums = [3, 1, -2, -5, 2, -4];
+
+console.log(rearrangeArray(nums));

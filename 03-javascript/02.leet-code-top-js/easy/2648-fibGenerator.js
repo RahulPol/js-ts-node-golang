@@ -28,17 +28,13 @@
 // 0 <= callCount <= 50
 
 var fibGenerator = function* () {
-  let a = 0,
-    b = 1,
-    result = 0;
   yield 0;
   yield 1;
-
-  for (;;) {
-    result = a + b;
-    a = b;
-    b = result;
-    yield result;
+  let a = 0,
+    b = 1;
+  while (true) {
+    yield a + b;
+    [a, b] = [b, a + b];
   }
 };
 
