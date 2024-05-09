@@ -1,14 +1,19 @@
-function aClean(arr) {
-  const map = new Map();
-
-  for (const word of arr) {
-    const key = word.toLowerCase().split("").sort().join("");
-    map.set(key, word);
+class ArrayWrapper {
+  constructor(arr) {
+    this.arr = arr;
   }
 
-  return Array.from(map.values());
+  valueOf() {
+    return this.arr.reduce((sum, curr) => sum + curr);
+  }
+
+  toString() {
+    return `[${this.arr.join(",")}]`;
+  }
 }
 
-let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+const arr1 = new ArrayWrapper([1, 2, 3]);
+const arr2 = new ArrayWrapper([1, 2]);
 
-console.log(aClean(arr)); // "nap,teachers,ear" or "PAN,cheaters,era"
+console.log(arr1 + arr2);
+console.log(String(arr1));
