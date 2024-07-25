@@ -83,6 +83,21 @@ Promise.race([promise1, promise2, promise3])
   });
 
 /*
+
+/*
+ Promise.reject 
+ Promise.race() takes an iterable of Promises and returns a single Promise that resolves when any of the promises gets resolved. It will reject when all promises rejects.
+ */
+
+const promise1 = Promise.reject(0);
+const promise2 = new Promise((resolve) => setTimeout(resolve, 100, "quick"));
+const promise3 = new Promise((resolve) => setTimeout(resolve, 500, "slow"));
+
+const promises = [promise1, promise2, promise3];
+
+Promise.any(promises).then((value) => console.log(value)); // quick
+
+/*
 7. Async/Await:
 Async functions are a cleaner way to work with asynchronous code. They allow you to write asynchronous code that looks synchronous.
 An async function returns a Promise implicitly, and you can use the await keyword to pause the execution of the function until a Promise is resolved.

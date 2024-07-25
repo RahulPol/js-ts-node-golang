@@ -1,6 +1,6 @@
-Here we have a telescope we will call center that we have initialized to a telescope object with the
+Here we have a type we will call center that we have initialized to a type alias object with the
 members X and Y, both pointing to the number zero.
-Now the telescope syntax for entertaining objects is very similar to the syntax of JavaScript object
+Now the type syntax for entertaining objects is very similar to the syntax of JavaScript object
 initializes.
 Here we are saying that center is a variable that must always be assigned an object with the member
 X of type number and a member Y of type number.

@@ -1,3 +1,9 @@
+Prerequisite
+
+- Node js
+- VS Code
+- npx tsc --watch
+
 Now, in order to get started with TypeScript, the first thing that we need to do is to install the
 NodeJS runtime.
 NodeJS is a standard development tool used for developing both backend as well as front end applications

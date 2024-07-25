@@ -9,7 +9,7 @@ class MyClass {
 }
 
 // Constructor Method:
-// The constructor method is a special method used for initializing new instances of the class. It's invoked automatically when a new instance of the class is created.
+// The constructor method is a special method used for initializing new instances of the class. It's invoked automatically when a new instance of the class is created using new keyword.
 class Person {
   constructor(name, age) {
     this.name = name;

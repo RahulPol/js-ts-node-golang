@@ -30,14 +30,21 @@
 9. Rest API
    - [Rest API Concepts](./09-rest-api/01-concepts/)
    - [Rest API Security](./09-rest-api/02-rest-api-security/)
-10. Microservices
+10. Golang
+    - [Golang concepts](./12-golang/go-complete-guide-resources-main/)
+    - [Golang sample server with clean architecture](./12-golang/golang-gin-clean/)
+    - [Golang multithreading](https://www.youtube.com/watch?v=LvgVSSpwND8&ab_channel=JakeWright)
+    - [Goroutine crash course](https://www.youtube.com/watch?v=5Z8skvm4g64&ab_channel=BenDavis)
+    - [Golang Security](./12-golang/Go-SCP-master/)
+11. Microservices
     - [Microservice through QnA](https://docs.google.com/document/d/1azXsr0bAFMl4lxidU9l8nZv24mFtNt5-7GcPtrSOv-4/edit)
-11. Database interview questions
+12. Database interview questions
     - https://www.testgorilla.com/blog/50-sql-server-interview-questions-for-recruiters/?utm_term=&utm_campaign=Dynamic_Premium&utm_source=google&utm_medium=cpc&hsa_acc=4932434860&hsa_cam=18131062749&hsa_grp=144226140870&hsa_ad=617748855342&hsa_src=g&hsa_tgt=dsa-1456167871416&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gclid=CjwKCAiA_5WvBhBAEiwAZtCU74Isp4qA4FHT2e-YfJbYO-hIG86y7K-dCbhOZ-dhEwWz8r4Q6XPXcRoCdBMQAvD_BwE&gad_source=1
     - https://www.guru99.com/database-interview-questions.html
-12. MongoDB interview questions
+13. MongoDB interview questions
     - https://mindmajix.com/mongodb-interview-questions
     - https://www.interviewbit.com/mongodb-interview-questions/
+    - https://www.youtube.com/watch?v=EKEpVhi-29Q&t=1140s
 
 Miscellaneous
 
