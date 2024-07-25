@@ -35,6 +35,7 @@
     - [Go in depth](https://github.com/flysnoworg/go-in-action-notes?tab=readme-ov-file)
     - [Golang sample server with clean architecture](./12-golang/golang-gin-clean/)
     - [Request parsing best practice](https://www.alexedwards.net/blog/how-to-properly-parse-a-json-request-body)
+    - [Golang multithreading code](./12-golang/go-multithreading/)
     - [Golang multithreading](https://www.youtube.com/watch?v=LvgVSSpwND8&ab_channel=JakeWright)
     - [Goroutine crash course](https://www.youtube.com/watch?v=5Z8skvm4g64&ab_channel=BenDavis)
     - [Golang Security](./12-golang/Go-SCP-master/)
