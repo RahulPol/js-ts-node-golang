@@ -21,14 +21,15 @@ func waitGroup(){
 	// after go routine is completed you need to remove it from go routine
 	wg.Add(1)
 
-	// one way is to send it to count4 function but it should not be responsibility of
+	// one way is to send wait group to count4 function but count4 should not be responsibility of
 	// count4 to manage wait group
 
 	// so create an anonymous function, run it as go routine and at the end of it 
 	// remove it from wait group
 	go func(){
+		defer wg.Done() // decrements counter by 1
 		count4("sheep") // started as new go routine thus new thread started in background
-		wg.Done() // decrements counter by 1
+		
 	}()
 	
 	// now wait until all go routines are done

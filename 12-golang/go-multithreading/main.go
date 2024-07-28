@@ -1,5 +1,7 @@
 package main
 
+
+
 func main() {
 	// simpleWithoutMultithreading()
 	// simpleWithGoroutine()
@@ -9,5 +11,7 @@ func main() {
 	// readAllFromChannel()
 	// bufferedChannel()
 	// selectStatement()
-	workerPool()
+	// workerPool()
+
+	
 }

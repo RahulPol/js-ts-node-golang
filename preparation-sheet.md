@@ -33,6 +33,7 @@
 10. Golang
     - [Golang concepts](./12-golang/go-complete-guide-resources-main/)
     - [Go in depth](https://github.com/flysnoworg/go-in-action-notes?tab=readme-ov-file)
+    - [Go interview questions](https://www.turing.com/interview-questions/golang)
     - [Golang sample server with clean architecture](./12-golang/golang-gin-clean/)
     - [Request parsing best practice](https://www.alexedwards.net/blog/how-to-properly-parse-a-json-request-body)
     - [Golang multithreading code](./12-golang/go-multithreading/)
@@ -70,6 +71,10 @@ Miscellaneous
   - https://www.youtube.com/watch?v=TlHvYWVUZyc
 - multithreading in javascript and node js
 - go through code of leanpos to check azure event hub
+
+Interview tips
+
+- answer point to point, if you provide detailed answer it might spawn a new question :)
 
 CHECK YOUR RESUME BEFORE INTERVIEW
 DO NOT FORGET TO RECORD INTERVIEW
