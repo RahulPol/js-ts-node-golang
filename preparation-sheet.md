@@ -14,6 +14,7 @@
    - [Common code templates](./05-datastructures/01-code-templates/)
    - [Interview DS problems](./05-datastructures/02-interview-problems/)
    - [Leet Code top 150](./05-datastructures/03-leet-code-top-150/)
+   - [Leet code top 150 Reference]()
 6. React
    - [React Concepts](./06-react/01-concepts/)
    - [Redux Toolkit](https://www.youtube.com/watch?v=5yEG6GhoJBs&ab_channel=CosdenSolutions)
@@ -32,7 +33,7 @@
    - [Rest API Security](./09-rest-api/02-rest-api-security/)
 10. Golang
     - [Golang concepts](./12-golang/go-complete-guide-resources-main/)
-    - [Go in depth](https://github.com/flysnoworg/go-in-action-notes?tab=readme-ov-file)
+    - [Optional: Go in depth](https://github.com/flysnoworg/go-in-action-notes?tab=readme-ov-file)
     - [Go interview questions](https://www.turing.com/interview-questions/golang)
     - [Golang sample server with clean architecture](./12-golang/golang-gin-clean/)
     - [Request parsing best practice](https://www.alexedwards.net/blog/how-to-properly-parse-a-json-request-body)
@@ -58,7 +59,7 @@ Miscellaneous
 - Express guide
   - https://www.youtube.com/watch?v=TJJbaxjiaJc&list=PLYvdvJlnTOjFZtADcZtoyUiSqsQThy4CH&index=3
 - JWT Token
-- Improve website perfromance
+- Improve website performance
   - https://sematext.com/blog/improve-website-performance/
 - check how OAuth works in express
 - Rest vs GraphQL

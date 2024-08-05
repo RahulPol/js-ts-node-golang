@@ -21,8 +21,8 @@ func waitGroup(){
 	// after go routine is completed you need to remove it from go routine
 	wg.Add(1)
 
-	// one way is to send wait group to count4 function but count4 should not be responsibility of
-	// count4 to manage wait group
+	// to remove from wait group, one way is to send wait group to count4 function but 
+	// it should not be responsibility of count4 to manage wait group
 
 	// so create an anonymous function, run it as go routine and at the end of it 
 	// remove it from wait group

@@ -7,7 +7,7 @@ import (
 
 // until previous version the code running in background thread was just printing output
 // but now we want it to send messages(communicate) with main thread.
-// this can be done by channels, consider channel as a pipeline of specific type(int,float, string, etc..) that allows you to communicate between goroutine and main thread
+// this can be done by channels, consider channel as a pipeline of specific type(int,float, string, etc..) that allows you to communicate between goroutines (main runs in main go routine)
 func count5(thing string, c chan string) { // note, the channel of type  string
 	for i := 0; i < 5; i++ {
 		// send data to channel 

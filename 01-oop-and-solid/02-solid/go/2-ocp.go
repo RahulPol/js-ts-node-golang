@@ -17,14 +17,22 @@ type CartTypeDiscount struct {
 }
 
 func (ctd *CartTypeDiscount) canApply(car *Car) bool {
-	if car.carType == SUV {
-		return true
-	}
-	return false
+	return car.carType == SUV
 }
 
 func (ctd *CartTypeDiscount) discount(car *Car) float64 {
 	return car.price * 10 * 0.01
+}
+
+type BlackFridayDiscount struct {
+}
+
+func (bfd *BlackFridayDiscount) canApply(car *Car) bool {
+	return car.price > 1000
+}
+
+func (bfd *BlackFridayDiscount) discount(car *Car) float64 {
+	return car.price * 15 * 0.01
 }
 
 func NewCarTypeDiscount() *CartTypeDiscount {

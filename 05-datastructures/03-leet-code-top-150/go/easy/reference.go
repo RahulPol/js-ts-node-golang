@@ -136,7 +136,7 @@ func lengthOfLastWord(s string) int {
 }
 
 
-func maxProfit(prices []int) int {
+func maxProfitV2(prices []int) int {
     // Check if the prices slice is empty
     if len(prices) == 0 {
         return 0 // If it's empty, return 0 as there can be no profit
@@ -165,10 +165,11 @@ func maxProfit(prices []int) int {
     return maxProfit
 }
 
-func majorityElement(nums []int) int {
+func majorityElementV3(nums []int) int {
     var ans int
     var count int
 
+	// 2,2,1,1,1,2,2
     for _, num := range nums {
         if count == 0 {
             ans = num
@@ -204,7 +205,7 @@ func removeDuplicates(nums []int) int {
 }
 
 
-func removeElement(nums []int, val int) int {
+func removeElementV2(nums []int, val int) int {
     i := 0
     for _, num := range nums {
         if num != val {
@@ -215,7 +216,7 @@ func removeElement(nums []int, val int) int {
     return i
 }
 
-func merge(nums1 []int, m int, nums2 []int, n int)  { 
+func mergeV3(nums1 []int, m int, nums2 []int, n int)  { 
     var ptr1, ptr2, ptr3 int = m-1, n-1, m+n-1
     for ; ptr1 >= 0 && ptr2 >= 0; ptr3-- {
         if nums2[ptr2] >= nums1[ptr1] {
