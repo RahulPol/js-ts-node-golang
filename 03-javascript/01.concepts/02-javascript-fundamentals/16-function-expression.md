@@ -59,6 +59,7 @@ ask("Do you agree?", showOk, showCancel);
 The arguments showOk and showCancel of ask are called callback functions or just callbacks. The idea is that we pass a function and expect it to be “called back” later if necessary. In our case, showOk becomes the callback for “yes” answer, and showCancel for “no” answer.
 
 **When to choose Function Declaration versus Function Expression?**
+
 As a rule of thumb, when we need to declare a function, the first thing to consider is Function Declaration syntax. It gives more freedom in how to organize our code, because we can call such functions before they are declared.
 
 That’s also better for readability, as it’s easier to look up function f(…) {…} in the code than let f = function(…) {…};. Function Declarations are more “eye-catching”.

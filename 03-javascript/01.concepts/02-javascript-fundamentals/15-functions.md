@@ -52,7 +52,7 @@ function showMessage() {
 
   let message = "Hello, "; // shadows outer message
   message = message + username;
-  alert(message);
+  alert(message); // Hello, Bob
 }
 
 alert(userName); // John before the function call
